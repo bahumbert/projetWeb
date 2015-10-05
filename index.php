@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<?php session_start(); ?>
+
+<!DOCTYPE html>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="style.css">
@@ -26,7 +28,7 @@
 						<a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
 						</form>
 					</div>
-					<a href="admin.html" class="text-center new-account">Create an account </a>
+					<a href="#" class="text-center new-account">Create an account </a>
 				</div>
 			</div>
 		</div>
