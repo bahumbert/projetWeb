@@ -9,6 +9,8 @@
 		{
 			if($array[$_POST["usr"]]==sha1($_POST["pwd"]))
 			{ 
+				$_SESSION["login"]=$_POST["usr"];
+				setcookie('login',$_POST["usr"],time()+(3600*24*30));
 				echo "connecté"; 
 			}
 			else
