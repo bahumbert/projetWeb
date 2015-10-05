@@ -1,4 +1,4 @@
-﻿<?php session_start() ?>
+﻿<?php session_start(); ?>
 
 <!DOCTYPE html>
 	<head>
@@ -12,12 +12,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-md-4 col-md-offset-4">
-					<h1 class="text-center login-title">ZZTasks : Connection </h1>
+					<h1 class="text-center login-title">ZZTasks : <?php //echo $TXT_;?>
+					</h1>
 					<div class="account-wall">
 						<img class="profile-img" src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"
 						 alt="">
 						<form class="form-signin" action="login.php" method="POST">
-						<input type="text" class="form-control" placeholder="Username" name="usr" required autofocus>
+						<input type="text" class="form-control" placeholder="Username" name="usr" required autofocus <?php if(isset($_COOKIE['login'])){ echo $_COOKIE['login'];}  ?> >
 						<input type="password" class="form-control" placeholder="Password" name="pwd" required>
 						<button class="btn btn-lg btn-primary btn-block" type="submit">
 							Sign in</button>
