@@ -14,21 +14,21 @@
 			else
 			{
 				echo "mauvais mot de passe"; 
-				//header("Location: index.html");
+				//header("Location: index.php");
 				//exit();
 			}
 		}
 		else
 		{
 			echo "mauvais login"; 
-			//header("Location: index.html");
+			//header("Location: index.php");
 			//exit();
 		}
 		
 	}
 	else
 	{
-		header("Location: index.html");
+		header("Location: index.php");
 		exit();
 	}
 ?>
