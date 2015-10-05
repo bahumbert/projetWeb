@@ -29,15 +29,15 @@ switch ($lang) {
   break;
  
   case 'fr':
-  $lang_file = 'lang.de.php';
+  $lang_file = $fichier.'_de.php';
   break;
  
   /*case 'de':
-  $lang_file = 'lang.es.php';
+  $lang_file = $fichier.'_es.php';
   break;*/
  
   default:
-  $lang_file = 'lang.fr.php';
+  $lang_file = $fichier.'_fr.php';
  
 }
 ?>
