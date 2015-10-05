@@ -18,7 +18,7 @@
 						<img class="profile-img" src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"
 						 alt="">
 						<form class="form-signin" action="login.php" method="POST">
-						<input type="text" class="form-control" placeholder="Username" name="usr" required autofocus <?php if(isset($_COOKIE['login'])){ echo $_COOKIE['login'];}  ?> >
+						<input type="text" class="form-control" placeholder="Username" name="usr" required autofocus value="<?php if(isset($_COOKIE['login'])){ echo $_COOKIE['login'];}  ?>" >
 						<input type="password" class="form-control" placeholder="Password" name="pwd" required>
 						<button class="btn btn-lg btn-primary btn-block" type="submit">
 							Sign in</button>
