@@ -11,10 +11,7 @@ $TXT_PASSWORD = "Mot de passe";
 $TXT_SIGN = "Valider";
 $TXT_REMEMBER = "Se souvenir de moi";
 $TXT_HELP = "Besoin d'aide";
-$TXT_CREATE = "Créer un compte";
-$TXT_MYLANGUAGE = "Français";
-$TXT_LANGUAGE1 = "English";
-$TXT_LANGUAGE2 = "Deutsch";
+$TXT_CREATE = "CrÃ©er un compte";
 
 
 

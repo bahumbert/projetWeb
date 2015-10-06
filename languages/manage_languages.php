@@ -1,15 +1,21 @@
 <?php 
 
-$fichier = $_SERVER['PHP_SELF'];
-echo "Fichier = ".$fichier;
+/*
+ * Chooses which language file should be imported
+ * 
+ * 
+ * 
+ * 
+ * 
+*/
 
 if(isset($_GET['lang'])){
 	$lang = $_GET['lang'];
  
 // register the session and set the cookie
-	$_SESSION['lang'] = $lang;
+	$_SESSION['lang'] = strtolower(substr($lang,0,2));
  
-	setcookie('lang', $lang, time() + (3600 * 24 * 30));
+	setcookie('lang', $_SESSION['lang'], time() + (3600 * 24 * 30));
 	
 } 
 else if(isset($_SESSION['lang'])){
@@ -25,19 +31,25 @@ else {
  
 switch ($lang) {
   case 'en':
-  $lang_file = $fichier.'_en.php';
+  $lang_file = "./languages/".$file.'_en.php';
+  $TXT_CURRENT_LANGUAGE = "English";
+  $TXT_LANGUAGE1 = "Français";
+  $TXT_LANGUAGE2 = "Deutsch";
   break;
+  
+   
+  /* case 'de':
+  $lang_file = "./languages/".$file.'_de.php';
+  break;*/
+
  
   case 'fr':
-  $lang_file = $fichier.'_de.php';
-  break;
- 
-  /*case 'de':
-  $lang_file = $fichier.'_es.php';
-  break;*/
- 
   default:
-  $lang_file = $fichier.'_fr.php';
+  $lang_file = "./languages/".$file.'_fr.php';
+  $TXT_CURRENT_LANGUAGE = "Français";
+  $TXT_LANGUAGE1 = "English";
+  $TXT_LANGUAGE2 = "Deutsch";
+  break;
  
 }
 ?>
