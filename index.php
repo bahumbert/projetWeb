@@ -5,7 +5,8 @@ include ("./languages/manage_languages.php");
 include ($lang_file);
 ?>
 
-<!DOCTYPE html lang="<?php echo $TXT_CURRENT_LANGUAGE; ?>">
+<!DOCTYPE html>
+<html  lang="<?php echo $lang; ?>">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="style.css">
