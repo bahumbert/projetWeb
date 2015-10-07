@@ -48,9 +48,9 @@ include ($lang_file);
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE1 ?>"><?php echo $TXT_LANGUAGE1 ?></a></li>
-							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE2 ?>"><?php echo $TXT_LANGUAGE2 ?></a></li>
-							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE3 ?>"><?php echo $TXT_LANGUAGE3 ?></a></li>
+							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE1_LIEN ?>"><?php echo $TXT_LANGUAGE1 ?></a></li>
+							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE2_LIEN ?>"><?php echo $TXT_LANGUAGE2 ?></a></li>
+							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE3_LIEN ?>"><?php echo $TXT_LANGUAGE3 ?></a></li>
 						</ul>
 					</div>
 				</div>
