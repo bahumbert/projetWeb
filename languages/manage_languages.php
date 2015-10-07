@@ -9,8 +9,8 @@
  * 
 */
 
-if(isset($_POST['lang'])){
-	$lang = strtolower(substr($_POST['lang'],0,2));
+if(isset($_GET['lang'])){
+	$lang = strtolower(substr($_GET['lang'],0,2));
  
 // register the session and set the cookie
 	$_SESSION['lang'] = $lang;
