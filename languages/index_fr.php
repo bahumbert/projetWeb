@@ -1,7 +1,7 @@
 <?php
 /* 
 ------------------
-Index Language: French
+Index Language: Français
 ------------------
 */
 
