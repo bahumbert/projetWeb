@@ -1,9 +1,9 @@
-$('document').ready(function(){
+//$('document').ready(function(){
 
-	$(".dropdown-menu li").click(function(){
+	//$(".dropdown-menu li").click(function(){
 		
-		var language = $("a",this).text();
-		window.location.href += "?lang=" + language;
-	});
+		//var language = $("a",this).text();
+		//window.location.href += "?lang=" + language;
+	//});
 	
-});
+//});

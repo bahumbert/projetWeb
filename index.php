@@ -40,31 +40,19 @@ include ($lang_file);
 						</form>
 					</div>
 					<a href="admin.html" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
-				</div>
+				</div>				
 				<div class="col-sm-6 col-md-4 col-md-offset-0">
-					<div class="dropdown">
-						<button type="button" class="btn btn-primary" data-toggle="dropdown"><?php echo $TXT_CURRENT_LANGUAGE ?></button>
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="."><?php echo $TXT_LANGUAGE1 ?></a></li>
-							<li><a href="."><?php echo $TXT_LANGUAGE2 ?></a></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!--<div class="col-sm-6 col-md-4 col-md-offset-0">
 					<div class="btn-group">
 						<button type="button" class="btn btn-primary"><?php echo $TXT_CURRENT_LANGUAGE ?></button>
 						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="."><?php echo $TXT_LANGUAGE1 ?></a></li>
-							<li><a href="."><?php echo $TXT_LANGUAGE2 ?></a></li>
+							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE1 ?>"><?php echo $TXT_LANGUAGE1 ?></a></li>
+							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE2 ?>"><?php echo $TXT_LANGUAGE2 ?></a></li>
 						</ul>
 					</div>
-				</div>-->
+				</div>
 				
 				
 			</div>
