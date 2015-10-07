@@ -49,9 +49,9 @@ switch ($lang) {
 	
   case 'py':
   $lang_file = "./languages/".$file.'_ru.php';
-   $TXT_CURRENT_LANGUAGE = "Русский";
-  $TXT_LANGUAGE1 = "English";
-  $TXT_LANGUAGE2 = "Français";
+  $TXT_CURRENT_LANGUAGE = "Русский";
+  $TXT_LANGUAGE1 = "Français";
+  $TXT_LANGUAGE2 = "English";
   $TXT_LANGUAGE3 = "Deutsch";
   break;
  
