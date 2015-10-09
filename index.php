@@ -13,7 +13,6 @@ include ($lang_file);
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="./jquery.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<title>ZZTasks</title>
 	</head>	
@@ -36,10 +35,10 @@ include ($lang_file);
 							<input type="checkbox" value="remember-me">
 							<?php echo $TXT_REMEMBER ?>
 						</label>
-						<a href="." class="pull-right need-help"> <?php echo $TXT_HELP ?></a><span class="clearfix"></span>
+						<a href="https://www.google.com" class="pull-right need-help"> <?php echo $TXT_HELP ?></a><span class="clearfix"></span>
 						</form>
 					</div>
-					<a href="admin.html" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
+					<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
 				</div>				
 				<div class="col-sm-6 col-md-4 col-md-offset-0">
 					<div class="btn-group">
