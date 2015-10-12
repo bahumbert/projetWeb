@@ -12,19 +12,21 @@
 				$_SESSION["login"]=$_POST["usr"];
 				setcookie('login',$_POST["usr"],time()+(3600*24*30));
 				echo "connecté"; 
+				header("Location: task.php");
+				exit();
 			}
 			else
 			{
 				echo "mauvais mot de passe"; 
-				//header("Location: index.php");
-				//exit();
+				header("Location: index.php");
+				exit();
 			}
 		}
 		else
 		{
 			echo "mauvais login"; 
-			//header("Location: index.php");
-			//exit();
+			header("Location: index.php");
+			exit();
 		}
 		
 	}

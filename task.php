@@ -1,5 +1,4 @@
-<?php session_start();
-
+<?php
 $file = "task";
 include ("./languages/manage_languages.php");
 include ($lang_file);
@@ -26,13 +25,13 @@ include ($lang_file);
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE1_LIEN ?>"><?php echo $TXT_LANGUAGE1 ?></a></li>
-							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE2_LIEN ?>"><?php echo $TXT_LANGUAGE2 ?></a></li>
-							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE3_LIEN ?>"><?php echo $TXT_LANGUAGE3 ?></a></li>
+							<li><a href="./task.php?lang=<?php echo $TXT_LANGUAGE1_LIEN ?>"><?php echo $TXT_LANGUAGE1 ?></a></li>
+							<li><a href="./task.php?lang=<?php echo $TXT_LANGUAGE2_LIEN ?>"><?php echo $TXT_LANGUAGE2 ?></a></li>
+							<li><a href="./task.php?lang=<?php echo $TXT_LANGUAGE3_LIEN ?>"><?php echo $TXT_LANGUAGE3 ?></a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-4">
+				<div class="col-sm-6 col-md-4 col-xs-10  col-md-offset-4 col-sm-offset-3 col-xs-offset-1">
 					<h1 class="text-center login-title">ZZTasks : <?php echo $TXT_TITLE ?>
 					</h1>
 				</div>

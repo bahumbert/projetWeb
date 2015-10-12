@@ -32,7 +32,7 @@ include ($lang_file);
 						</ul>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-4">
+				<div class="col-sm-6 col-md-4 col-xs-10  col-md-offset-4 col-sm-offset-3 col-xs-offset-1">
 					<h1 class="text-center login-title">ZZTasks : <?php echo $TXT_TITLE ?>
 					</h1>
 					<div class="account-wall">
