@@ -1,6 +1,6 @@
 <?php session_start();
 
-$file = "index";
+$file = "task";
 include ("./languages/manage_languages.php");
 include ($lang_file);
 ?>
@@ -19,11 +19,7 @@ include ($lang_file);
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-md-4 col-md-offset-4">
-					<h1 class="text-center login-title">ZZTasks : <?php echo $TXT_TITLE ?>
-					</h1>
-				</div>	
-				<div class="col-sm-6 col-md-4 col-md-offset-0">
+				<div class="col-sm-4 col-md-4 col-xs-6 col-md-offset-8 col-sm-offset-8 col-xs-offset-6">
 					<div class="btn-group">
 						<button type="button" class="btn btn-primary"><?php echo $TXT_CURRENT_LANGUAGE ?></button>
 						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -35,6 +31,10 @@ include ($lang_file);
 							<li><a href="./index.php?lang=<?php echo $TXT_LANGUAGE3_LIEN ?>"><?php echo $TXT_LANGUAGE3 ?></a></li>
 						</ul>
 					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-4">
+					<h1 class="text-center login-title">ZZTasks : <?php echo $TXT_TITLE ?>
+					</h1>
 				</div>
 			</div>
 		</div>

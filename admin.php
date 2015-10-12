@@ -21,7 +21,20 @@ include ($lang_file);
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-md-4 col-md-offset-4">
+				<div class="col-sm-4 col-md-4 col-xs-6 col-md-offset-8 col-sm-offset-8 col-xs-offset-6">
+					<div class="btn-group">
+						<button type="button" class="btn btn-primary"><?php echo $TXT_CURRENT_LANGUAGE ?></button>
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="./admin.php?lang=<?php echo $TXT_LANGUAGE1_LIEN ?>"><?php echo $TXT_LANGUAGE1 ?></a></li>
+							<li><a href="./admin.php?lang=<?php echo $TXT_LANGUAGE2_LIEN ?>"><?php echo $TXT_LANGUAGE2 ?></a></li>
+							<li><a href="./admin.php?lang=<?php echo $TXT_LANGUAGE3_LIEN ?>"><?php echo $TXT_LANGUAGE3 ?></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-4">
 					<h1 class="text-center login-title">ZZTasks : <?php echo $TXT_TITLE ?> </h1>
 					<div class="account-wall">
 						<img class="profile-img" src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"
@@ -35,20 +48,7 @@ include ($lang_file);
 						</form>
 					</div>
 					<a href="index.php" class="text-center new-account"> <?php echo $TXT_LOG ?> </a>
-				</div>
-				<div class="col-sm-6 col-md-4 col-md-offset-0">
-					<div class="btn-group">
-						<button type="button" class="btn btn-primary"><?php echo $TXT_CURRENT_LANGUAGE ?></button>
-						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="./admin.php?lang=<?php echo $TXT_LANGUAGE1_LIEN ?>"><?php echo $TXT_LANGUAGE1 ?></a></li>
-							<li><a href="./admin.php?lang=<?php echo $TXT_LANGUAGE2_LIEN ?>"><?php echo $TXT_LANGUAGE2 ?></a></li>
-							<li><a href="./admin.php?lang=<?php echo $TXT_LANGUAGE3_LIEN ?>"><?php echo $TXT_LANGUAGE3 ?></a></li>
-						</ul>
-					</div>
-				</div>
+				</div>	
 			</div>
 		</div>
 	</body>
