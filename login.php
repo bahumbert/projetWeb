@@ -7,7 +7,7 @@
 		fclose($monfichier);
 		if(isset($array[$_POST["usr"]]))
 		{
-			if($array[$_POST["usr"]]==sha1($_POST["pwd"]))
+			if($array[$_POST["usr"]]==sha1("zztask".$_POST["pwd"]."bcrypt"))
 			{ 
 				$_SESSION["login"]=$_POST["usr"];
 				setcookie('login',$_POST["usr"],time()+(3600*24*30));
