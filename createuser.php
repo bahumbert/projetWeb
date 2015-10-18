@@ -4,7 +4,7 @@
 	$arr = json_decode($line,true);
 	fclose($monfichier);
 	$usr = $_POST["usr"];
-	$pwd = sha1($_POST["pwd"]);
+	$pwd = sha1("zztask".$_POST["pwd"]."bcrypt");
 	$array = array( $usr => $pwd );
 	$log = array_merge($arr,$array);
 	$monfichier = fopen("files/login.json", "w");
