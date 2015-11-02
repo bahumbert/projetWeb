@@ -9,7 +9,6 @@ var app = angular.module('zztask', []);
 app.controller('who_is_online', function($scope, $http) {
 	
 	//alert('GO2');
-	
 	$http({
 		method: 'POST',
 		url: './who_is_online.php',
