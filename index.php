@@ -6,11 +6,8 @@ include($lang_file);
 ?>
 
 <!DOCTYPE html>
-<html lang="<?php echo $lang; ?>" ng-app="zztask">
+<html lang="<?php echo $lang; ?>">
 	<?php include("./includes/head.php"); ?>
-	<script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script>
-	<script src="app.js"></script>
-	<script src="draganddrop.js"></script>
 	<body>
 		<div class="container">
 			<div class="row">
