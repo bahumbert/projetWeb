@@ -17,37 +17,43 @@ include($lang_file);
 			</div>
 			<div class="row">	
 				<div class="col-xs-4">
-						<fieldset>
-							<legend><?php echo $TXT_TODO?></legend>
+						<fieldset class="scheduler-border">
+							<legend class="scheduler-border"><?php echo $TXT_TODO?></legend>
 							<ul ui-on-Drop="onDrop($event,$data,todo2)">
 								<li ui-draggable="true" drag="todo" 
 								on-drop-success="dropSuccessHandler($event,$index,todo2)"
 								ng-repeat="todo in todo2 track by $index">
-									{{todo}}
+								<fieldset class="scheduler-border">
+									<legend class="scheduler-border">{{todo}}</legend>
+								</fieldset>
 								</li>
 							</ul>
 					</fieldset>
 				</div>
 				<div class="col-xs-4">
-					<fieldset>
-							<legend><?php echo $TXT_INPROG?></legend>
+					<fieldset class="scheduler-border">
+							<legend class="scheduler-border"><?php echo $TXT_INPROG?></legend>
 							<ul ui-on-Drop="onDrop($event,$data,inprog2)">
 								<li ui-draggable="true" drag="inprog" 
 								on-drop-success="dropSuccessHandler($event,$index,inprog2)"
 								ng-repeat="inprog in inprog2 track by $index">
-									{{inprog}}
+								<fieldset class="scheduler-border">
+									<legend class="scheduler-border">{{inprog}}</legend>
+								</fieldset>
 								</li>
 							</ul>
 					</fieldset>
 				</div>
 				<div class="col-xs-4">
-					<fieldset>
-							<legend><?php echo $TXT_DONE?></legend>
+					<fieldset class="scheduler-border">
+							<legend class="scheduler-border"><?php echo $TXT_DONE?></legend>
 							<ul ui-on-Drop="onDrop($event,$data,done2)">
 								<li ui-draggable="true" drag="done" 
 								on-drop-success="dropSuccessHandler($event,$index,done2)"
 								ng-repeat="done in done2 track by $index">
-									{{done}}
+								<fieldset class="scheduler-border">
+									<legend class="scheduler-border">{{done}}</legend>
+								</fieldset>
 								</li>
 							</ul>
 					</fieldset>
