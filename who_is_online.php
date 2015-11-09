@@ -1,4 +1,8 @@
-﻿<?php session_start();
+﻿<?php 
+
+if(!isset($_SESSION)){
+    session_start();
+}
 
 $file_online = "./files/who_is_online.json";
 
