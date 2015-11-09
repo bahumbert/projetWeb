@@ -1,5 +1,6 @@
 ﻿<head>
 	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png" />
 	<script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script>
 	<script src="./app.js"></script>
 	<script src="./draganddrop.js"></script>
