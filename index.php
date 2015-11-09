@@ -28,22 +28,28 @@ include($lang_file);
 						<button class="btn btn-lg btn-primary btn-block" type="submit">
 								<?php echo $TXT_SIGN ?>
 						</button>
+						</form>
+						<?php
+						if (isset($_GET['error'])){
+							echo "<div class=\"alert alert-danger\">
+									<a href=\".\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
+									".$_GET['error'].".
+								 </div>";
+						}
+						?>
+						<form class="form-signin" action="login.php" method="POST">
 						<label class="checkbox pull-left">
 							<input type="checkbox" value="remember-me">
 							<?php echo $TXT_REMEMBER ?>
 						</label>
 						<a href="https://www.google.com" class="pull-right need-help"> <?php echo $TXT_HELP ?></a><span class="clearfix"></span>
 						</form>
+						
 					</div>
 					<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
-				</div>				
-			</div>
+				</div>
+			</div>				
 		</div>
-		<?php
-		if (isset($_GET['error'])){
-			echo $_GET['error'];
-		}
-		?>
 	</body>
 	
 </html> 

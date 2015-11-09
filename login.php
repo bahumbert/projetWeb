@@ -35,7 +35,6 @@ $error = "";
 				//echo "Connecté"; 
 				header("Location: task.php");
 				exit();
-				
 			}
 		}
 		else {
