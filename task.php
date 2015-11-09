@@ -1,4 +1,7 @@
-<?php session_start();
+<?php 
+if(!isset($_SESSION)){
+    session_start();
+}
 $file = "task";
 include("./languages/manage_languages.php");
 include($lang_file);
