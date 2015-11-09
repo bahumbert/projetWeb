@@ -1,18 +1,14 @@
-//$('document').ready(function(){
-
-	//$(".dropdown-menu li").click(function(){
-		
-		//var language = $("a",this).text();
-		//window.location.href += "?lang=" + language;
-	//});
-	
-//});
+/****************************************************************************/
+/*																			*/
+/* This file contains the ajax call to prevent simultaneous connection  	*/
+/* 																			*/
+/****************************************************************************/
 
 $('document').ready(function(){
 	
 	//alert('COUOCU');
 
-	var tid = setInterval(whoIsOnline, 15000);
+	var tid = setInterval(whoIsOnline, 15000);					// Calls the above function every 15 seconds
 	
 	function whoIsOnline() {
 		$.ajax({
@@ -22,7 +18,7 @@ $('document').ready(function(){
 			success : function(code_html, statut){
 				//alert('success');
 			},
-			error : function(resultat, statut, erreur){
+			error : function(resultat, statut, erreur){			// Error for a unknown reason
 				
 				abortTimer();
 				alert('Erreur, veuillez contacter votre administrateur système : '+erreur);
@@ -36,7 +32,7 @@ $('document').ready(function(){
 		});
 	}
 	
-	function abortTimer() { // stop the timer
+	function abortTimer() { 	// stop the timer
 		clearInterval(tid);
 	}
 	

@@ -1,33 +1,35 @@
 <?php 
 
-/*
- * Chooses which language file should be imported
- * 
- * 
- * 
- * 
- * 
-*/
+/****************************************************************/
+/*																*/
+/* This file chooses which language file should be imported		*/
+/* 																*/
+/****************************************************************/
 
-if(isset($_GET['lang'])){
-	$lang = $_GET['lang']; //strtolower(substr(x,0,2));
- 
-// register the session and set the cookie
- 
-	setcookie('lang', $lang, time() + (3600 * 24 * 30));
+
+/* Set the language */
+
+if(isset($_GET['lang'])){									// if the language has just been changed
+	$lang = $_GET['lang']; 
+  
+	setcookie('lang', $lang, time() + (3600 * 24 * 30)); 	// set the cookie
 	
 } 
-else if(isset($_COOKIE['lang'])){
+else if(isset($_COOKIE['lang'])){							// or if there's already a cookie 
 	$lang = $_COOKIE['lang'];
 }
-else if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
+else if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){			// or if the browser gives a default language 
 	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
 }
-else {
+else {														// french by default
 	$lang = 'fr';
 }
  
-switch ($lang) {
+ 
+ 
+/* Set the languages menu and the language file to include */
+ 
+switch ($lang) {											 
   case 'en':
   $lang_file = "./languages/".$file.'_en.php';
   $TXT_CURRENT_LANGUAGE = "English";
