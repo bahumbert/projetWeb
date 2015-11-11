@@ -17,10 +17,8 @@ $TXT_USER = "Utilisateur normal";
 $TXT_MANAGER = "Chef de projet";
 $TXT_ADMIN  = "Administrateur";
 
-$TXT_ERROR0 = "Le compte a bien été créé.";
-$TXT_ERROR1 = "Erreur, le compte existe déjà.";
-$TXT_ERROR2 = "Erreur, veuillez entrer un login et un mot de passe"; 
-$TXT_ERROR_DEFAULT = "Erreur";
+$TXT_ERROR0 = "Le compte ".$usr." a bien été créé.";
+$TXT_ERROR1 = "Erreur, le compte ".$usr." existe déjà.";
 
 
 

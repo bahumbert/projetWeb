@@ -38,7 +38,7 @@ $error = "";
 				$array = json_decode($line,true);
 				fclose($monfichier);
 				
-				$_SESSION["role"] = $array[$_POST["usr"]];
+				$_SESSION["role"] = $arr[$_POST["usr"]];
 				
 				header("Location: task.php");
 				exit();
