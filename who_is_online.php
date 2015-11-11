@@ -20,7 +20,7 @@ if (isset($_SESSION["login"])){
 	fclose(file);
 	
 	$usr = $_SESSION['login'];						
-	$date = date('Y/m/j H:i:s');
+	$date = time();
 	$array = array( $usr => $date );				// Creates a var containing the current user and the current date
 	if (isset($arr)){
 		$log = array_merge($arr,$array);			// Merges the 2 vars
