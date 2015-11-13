@@ -10,4 +10,6 @@ $TXT_TODO ="A faire";
 $TXT_INPROG ="En cours";
 $TXT_DONE ="Fait";
 
+$TXT_CREATE =  "Créer un compte";
+
 ?>

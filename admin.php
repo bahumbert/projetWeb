@@ -3,10 +3,10 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-/*if ($_SESSION["role"] != 2){
+if ($_SESSION["role"] != 2){
 	header("Location: index.php?error=4");
 	exit();
-}*/
+}
 
 $file = "admin";
 include("./languages/manage_languages.php");

@@ -13,7 +13,13 @@ include($lang_file);
 	<body>
 		<div class="container" ng-controller="MainCtrl">
 			<div class="row">
-				<?php include("./includes/languages_menu.php"); ?>
+				<?php include("./includes/languages_menu.php"); 
+				if ($_SESSION['role'] == 2){ ?>
+				<div class="col-sm-6 col-md-6 col-xs-6">
+					<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
+					</div>
+				<?php } ?>
+			
 			</div>
 			<div class="row">	
 				<div class="col-xs-4">
