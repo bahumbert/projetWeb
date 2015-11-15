@@ -1,0 +1,5 @@
+Options -Indexes
+<Files .htaccess>
+order deny,allow
+deny from all
+</Files>
