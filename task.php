@@ -15,7 +15,7 @@ include($lang_file);
 			<div class="row">
 				<?php include("./includes/languages_menu.php"); 
 				if ($_SESSION['role'] == 2){ ?>
-				<div class="col-sm-6 col-md-6 col-xs-6">
+				<div class="col-sm-4 col-md-4 col-xs-4">
 					<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
 					</div>
 				<?php } ?>

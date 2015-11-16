@@ -74,6 +74,22 @@ include($lang_file);
 				</div>	
 			</div>
 		</div>
+		
+		<?php include("./includes/list_all_user.php"); 
+		$array = list_all_user("./files/roles.json");
+		
+		$ROLES = array(0 => $TXT_USER, 1 => $TXT_MANAGER, 2 => $TXT_ADMIN);
+		
+		echo "Liste des utlisateurs :<br/>";
+		
+		foreach($array as $name => $role){
+			echo $name." : ".$ROLES[$role]."<br/>";
+		}
+		
+		
+		?>
+		
+		
 	</body>
 	
 	<footer>
