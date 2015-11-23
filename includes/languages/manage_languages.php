@@ -44,7 +44,7 @@ switch ($lang) {
    
   case 'de':
   $lang_file = "./languages/".$file.'_de.php';
-   $TXT_CURRENT_LANGUAGE = "Deutsch";
+  $TXT_CURRENT_LANGUAGE = "Deutsch";
   $TXT_LANGUAGE1 = "Français";
   $TXT_LANGUAGE2 = "English";
   $TXT_LANGUAGE3 = "Русский";
