@@ -9,7 +9,7 @@ include($lang_file);
 
 <!DOCTYPE html>
 <html ng-app="plunker" lang="<?php echo $lang; ?>">
-	<?php include('./includes/head.php'); ?>
+	<?php include('./includes/head.php'); ?> 
 	<body>
 		<div class="container" ng-controller="MainCtrl">
 			<div class="row">
