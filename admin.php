@@ -80,7 +80,7 @@ include($lang_file);
 		
 		$ROLES = array(0 => $TXT_USER, 1 => $TXT_MANAGER, 2 => $TXT_ADMIN);
 		
-		echo "Liste des utlisateurs :<br/>";
+		echo $TXT_LIST."<br/>";
 		
 		foreach($array as $name => $role){
 			echo $name." : ".$ROLES[$role]."<br/>";

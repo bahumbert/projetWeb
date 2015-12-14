@@ -22,7 +22,7 @@ $TXT_ERROR1 = "Fehler, verfügt bereits über dieses Benutzerkonto";
 $TXT_ERROR2 = "Fehler, bitte geben Sie einen gültigen Benutzernamen und ein Passwort"; 
 $TXT_ERROR_DEFAULT = "Fehler";
 
-
+$TXT_LIST = "Benutzerliste :";
 
 
 ?>
