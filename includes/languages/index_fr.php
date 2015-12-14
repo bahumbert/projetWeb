@@ -12,7 +12,7 @@ $TXT_SIGN = "Valider";
 $TXT_REMEMBER = "Se souvenir de moi";
 $TXT_HELP = "Besoin d'aide ?";
 $TXT_CREATE = "Créer un compte";
-$TXT_ROLE = "Vous devez être administrateur";
+
 
 
 

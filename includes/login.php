@@ -21,7 +21,7 @@ $error = "";
 			$arr = json_decode($line,true);
 			fclose(file);
 				
-			if (isset($arr[$_POST["usr"]]) && $arr[$_POST["usr"]] > strtotime('now -15 seconds')){
+			if (isset($arr[$_POST["usr"]]) && $arr[$_POST["usr"]] > date('Y/m/j H:i:s',strtotime('now -15 seconds'))){
 		
 				$error = $TXT_ALREADY_CONNECTED;
 				//header("Location: index.php?error='".$error."'");
@@ -38,7 +38,7 @@ $error = "";
 				$array = json_decode($line,true);
 				fclose($monfichier);
 				
-				$_SESSION["role"] = $array[$_POST["usr"]];
+				$_SESSION["role"] = $arr[$_POST["usr"]];
 				
 				header("Location: task.php");
 				exit();

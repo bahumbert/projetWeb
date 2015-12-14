@@ -46,15 +46,10 @@ include($lang_file);
 						</form>
 						
 					</div>
+					<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
 				</div>
 			</div>				
 		</div>
 	</body>
-	
-	<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
 	
 </html> 
