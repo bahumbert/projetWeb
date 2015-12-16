@@ -1,4 +1,4 @@
-<div class="col-sm-4 col-md-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+<div class="col-sm-4 col-md-4 col-xs-4">
 	<div class="btn-group">
 		<button type="button" class="btn btn-primary"><?php echo $TXT_CURRENT_LANGUAGE ?></button>
 		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">

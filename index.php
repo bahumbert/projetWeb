@@ -40,9 +40,13 @@ include($lang_file);
 								case 1:
 									$error = $TXT_ALREADY_CONNECTED;
 									break;
+									
+								case 2:
+									$error = $TXT_DOESNT_EXIST;
+									break;
 
 								default:
-									$error = $TXT_DOESNT_EXIST;
+									$error = $TXT_DEFAULT;
 
 							}
 							echo "<div class=\"alert alert-danger\">
