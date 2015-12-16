@@ -31,9 +31,23 @@ include($lang_file);
 						</form>
 						<?php
 						if (isset($_GET['error'])){
+							switch ($_GET['error']) {
+
+								case 0:
+									$error = $TXT_NO_INPUT;
+									break;
+							
+								case 1:
+									$error = $TXT_ALREADY_CONNECTED;
+									break;
+
+								default:
+									$error = $TXT_DOESNT_EXIST;
+
+							}
 							echo "<div class=\"alert alert-danger\">
-									<a href=\".\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
-									".$_GET['error'].".
+									<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
+									".$error.".
 								 </div>";
 						}
 						?>

@@ -23,7 +23,7 @@ $error = "";
 				
 			if (isset($arr[$_POST["usr"]]) && $arr[$_POST["usr"]] > strtotime('now -15 seconds')){
 		
-				$error = $TXT_ALREADY_CONNECTED;
+				$error = 1;
 				//header("Location: index.php?error='".$error."'");
 				//exit();
 				
@@ -46,14 +46,14 @@ $error = "";
 		}
 		else {
 			
-			$error = $TXT_DOESNT_EXIST;
+			$error = 2;
 			//header("Location: index.php?error='".$error."'");
 			//exit();
 			
 		}
 	}
 	else {
-		$error = $TXT_NO_INPUT;
+		$error = 0;
 	}
 	
 	header("Location: index.php?error=".$error);
