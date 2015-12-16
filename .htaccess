@@ -1,5 +1,22 @@
 Options -Indexes
-<Files .htaccess>
-order deny,allow
+order allow,deny
+<Files *.*>
 deny from all
+allow from 127.0.0.1
 </Files>
+
+<Files *.php>
+allow from all
+</Files>
+
+<Files *.css>
+allow from all
+</Files>
+
+<Files *.js>
+allow from all
+</Files>
+
+#<Files *.json>
+#allow from 127.0.0.1
+#</Files>
