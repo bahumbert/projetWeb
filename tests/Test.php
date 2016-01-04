@@ -1,3 +1,9 @@
 <?php
+class Tests extends PHPUnit_Framework_TestCase{
 
-assertEquals(1,1);
+	public function testtest(){
+
+		$this->assertEquals(1,1);
+
+	}
+}
