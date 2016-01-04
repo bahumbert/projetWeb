@@ -8,11 +8,11 @@ $('document').ready(function(){
 	
 	//alert('COUOCU');
 
-	var tid = setInterval(whoIsOnline, 15000);					// Calls the above function every 15 seconds
+	var tid = setInterval(isOnline, 15000);					// Calls the above function every 15 seconds
 	
-	function whoIsOnline() {
+	function isOnline() {
 		$.ajax({
-			url: './who_is_online.php',
+			url: './is_online.php',
 			type: 'POST',
 			data: {},
 			success : function(code_html, statut){

@@ -65,6 +65,13 @@ include($lang_file);
 			</div>
 		</div>
 		
+		<?php 
+		
+		include("./includes/who_is_online.php"); 
+		$array = who_is_online("./files/who_is_online.json");
+		
+		?>
+		
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="./jquery.js" async></script>
 
