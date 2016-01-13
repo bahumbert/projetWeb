@@ -1,12 +1,17 @@
-<?php session_start();
+<?php 
+if(!isset($_SESSION)){
+    session_start();
+}
 
-$file = "login";
-include("./languages/manage_languages.php");
-include($lang_file);
+login();
 
-$error = "";
+function login(){
+
+	$error = "";
 
 	if(isset($_POST["usr"]) && isset($_POST["pwd"])){
+		
+		$_POST["usr"] = strtolower($_POST["usr"]);
 		
 		$monfichier = fopen("files/login.json", "r");
 		$line = fgets($monfichier);
@@ -19,7 +24,7 @@ $error = "";
 			$file = fopen($file_online, "r");
 			$line = fgets($file);
 			$arr = json_decode($line,true);
-			fclose(file);
+			fclose($file);
 				
 			if (isset($arr[$_POST["usr"]]) && $arr[$_POST["usr"]] > strtotime('now -15 seconds')){
 		
@@ -47,8 +52,8 @@ $error = "";
 		else {
 			
 			$error = 2;
-			//header("Location: index.php?error='".$error."'");
-			//exit();
+			header("Location: index.php?error=".$error);
+			exit();
 			
 		}
 	}
@@ -58,5 +63,7 @@ $error = "";
 	
 	header("Location: index.php?error=".$error);
 	exit();
+	
+}
 ?>
 

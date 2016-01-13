@@ -5,28 +5,26 @@
 /****************************************************************************/
 
 $('document').ready(function(){
-	
-	//alert('COUOCU');
 
 	var tid = setInterval(whoIsOnline, 15000);					// Calls the above function every 15 seconds
 	
 	function whoIsOnline() {
 		$.ajax({
-			url: './who_is_online.php',
+			url: './includes/who_is_online.php',
 			type: 'POST',
 			data: {},
-			success : function(code_html, statut){
+			success : function(code, status){
 				//alert('success');
 			},
-			error : function(resultat, statut, erreur){			// Error for a unknown reason
+			error : function(result, status, error){			// Error for a unknown reason
 				
 				abortTimer();
-				alert('Erreur, veuillez contacter votre administrateur système : '+erreur);
+				alert('Unknown error, please contact your system administrator : '+ error);
 				window.location.href = "index.php";
 				
 			},
 			
-			complete : function(resultat, statut){
+			complete : function(result, status){
 				//alert('complete');
 			}
 		});

@@ -2,7 +2,7 @@
 
 /****************************************************************************/
 /*																			*/
-/* This file logs who is online every 15 seconds, through an ajax call		*/
+/* This file logs who is online every 15 seconds, using an ajax call		*/
 /* 																			*/
 /****************************************************************************/
 
@@ -10,7 +10,7 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$file_online = "./files/who_is_online.json";		// The file containing who is online
+$file_online = "../files/who_is_online.json";		// The file containing who is online
 
 if (isset($_SESSION["login"])){
 
@@ -32,5 +32,6 @@ if (isset($_SESSION["login"])){
 	fclose($file);
 	
 }
-else echo "Erreur lors de votre login, veuillez contacter votre administrateur système";
+else echo "Unknown error, please contact your system administrator";
+
 ?>
