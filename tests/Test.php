@@ -1,7 +1,7 @@
 <?php
 
-require_once(__DIR__."../src/createuser.php");
-require_once(__DIR__."../src/login.php");
+require_once(__DIR__."/../src/createuser.php");
+require_once(__DIR__."/../src/login.php");
 
 class Tests extends PHPUnit_Framework_TestCase{
 
