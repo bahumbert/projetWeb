@@ -20,7 +20,7 @@ class Tests extends PHPUnit_Framework_TestCase{
 		
 		deleteuser('KOUKOU');
 		$array = list_all_user("./files/roles.json");
-		$this->!assertArrayHasKey('KOUKOU', $array);
+		$this->assertNotArrayHasKey('KOUKOU', $array);
 
 	}
 }
