@@ -20,9 +20,14 @@ $TXT_ADMIN  = "Administrator";
 $TXT_ERROR0 = "A new user has been created";
 $TXT_ERROR1 = "Error, this user already has an account";
 $TXT_ERROR2 = "Error, please enter a valid username and password"; 
-$TXT_ERROR_DEFAULT = "Error";
+$TXT_ERROR4 = "This user has been deleted";
+$TXT_ERROR5 = "Error, this user doesn't exist";
+$TXT_ERROR6 = "Error, please try again";
+$TXT_ERROR_DEFAULT = "Unknown error";
 
 $TXT_LIST = "User list :";
+$TXT_DELETE = "Delete";
+$TXT_CONFIRM = "Are you sure?";
 
 
 

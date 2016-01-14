@@ -41,6 +41,26 @@ include($lang_file);
 									$alert = "danger";
 									$error = $TXT_ERROR1;
 									break;
+									
+								case 2:
+									$alert = "danger";
+									$error = $TXT_ERROR2;
+									break;
+									
+								case 4:
+									$alert = "success";
+									$error = $TXT_ERROR4;
+									break;
+									
+								case 5:
+									$alert = "danger";
+									$error = $TXT_ERROR5;
+									break;
+									
+								case 6:
+									$alert = "danger";
+									$error = $TXT_ERROR6;
+									break;
 
 								default:
 									$alert = "warning";
@@ -83,11 +103,11 @@ include($lang_file);
 		echo $TXT_LIST."<br/>";
 		
 		foreach($array as $name => $role){
-			echo $name." : ".$ROLES[$role]."<br/>";
+			echo $name." : ".$ROLES[$role];?> <a href='./deleteuser.php?user=<?php echo $name;?>' onclick='if (!confirm("<?php echo $TXT_CONFIRM;?>")) return false;'><?php echo $TXT_DELETE; ?></a><br/>
+	<?php	
 		}
-		
-		
-		?>
+
+	?>
 		
 		
 	</body>

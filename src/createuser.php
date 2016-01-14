@@ -1,12 +1,12 @@
 <?php
 
-createuser();
+createuser(null, null, null);
 
-function createuser(&$usr, &$pwd, &$roles){
+function createuser($usr, $pwd, $roles){
 
 	$error = "";
 
-	if ((isset($_POST["usr"]) && isset($_POST["pwd"])) || isset ($usr) && isset($pwd)){
+	if ((isset($_POST["usr"]) && isset($_POST["pwd"])) || $usr != null && $pwd != null){
 
 		if(isset($_POST["usr"])){
 			$usr = $_POST["usr"];
