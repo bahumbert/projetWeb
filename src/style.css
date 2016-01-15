@@ -108,3 +108,46 @@ legend.scheduler-border {
 ul{
 	list-style-type: none;
 }
+
+.subtitle
+{
+	font-weight: bold;
+}
+
+.title
+{
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+.date
+{
+	font-size: 10px;
+}
+
+.conteneur
+{
+	min-height: 80px;
+}
+
+.commentarybox
+{
+	border: 1px groove #ddd !important;
+}
+.commentary
+{
+	border: 1px groove #ddd !important;
+}
+
+.modal-title
+{
+	text-align: center;
+}
+
+.commentarytitle
+{
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+	
+}

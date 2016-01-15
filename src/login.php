@@ -1,76 +1,47 @@
-<?php 
-if(!isset($_SESSION)){
-    session_start();
-}
+<?php session_start();
 
-login(null, null);
+$file = "login";
+include("./languages/manage_languages.php");
+include($lang_file);
 
-function login($usr, $pwd){
+$error = "";
 
-	$error = "";
-
-	if((isset($_POST["usr"]) && isset($_POST["pwd"])) || ($usr != null)){
-		
-		if(isset($_POST["usr"])){
-			$usr = $_POST["usr"];
-			$pwd = sha1("zztask".$_POST["pwd"]."bcrypt");
-		}
-		else {
-			$pwd = sha1("zztask".$pwd."bcrypt");
-		}
-		$usr = strtolower($usr);
+	if(isset($_POST["usr"]) && isset($_POST["pwd"])){
 		
 		$monfichier = fopen("files/login.json", "r");
 		$line = fgets($monfichier);
 		$array = json_decode($line,true);
 		fclose($monfichier);
 		
-		if(isset($array[$usr]) && $array[$usr] == $pwd){
+		if(isset($array[$_POST["usr"]]) && $array[$_POST["usr"]]==sha1("zztask".$_POST["pwd"]."bcrypt")){
 		
 			$file_online = "./files/who_is_online.json";
 			$file = fopen($file_online, "r");
 			$line = fgets($file);
 			$arr = json_decode($line,true);
-			fclose($file);
+			fclose(file);
 				
-			if (isset($arr[$usr]) && $arr[$usr] > strtotime('now -15 seconds')){
+			if (isset($arr[$_POST["usr"]]) && $arr[$_POST["usr"]] > date('Y/m/j H:i:s',strtotime('now -15 seconds'))){
 		
-				$error = 1;
-				//header("Location: index.php?error='".$error."'");
-				//exit();
-				
+				$error = $TXT_ALREADY_CONNECTED;				
 			}
 			else {
 				
-				$_SESSION["login"]=$usr;
-				setcookie('login',$usr,time()+(3600*24*30));
-				
-				$monfichier = fopen("files/roles.json", "r");
-				$line = fgets($monfichier);
-				$array = json_decode($line,true);
-				fclose($monfichier);
-				
-				$_SESSION["role"] = $array[$usr];
-				
+				$_SESSION["login"]=$_POST["usr"];
+				setcookie('login',$_POST["usr"],time()+(3600*24*30)); 
 				header("Location: task.php");
 				exit();
 			}
 		}
-		else {
-			
-			$error = 2;
-			header("Location: index.php?error=".$error);
-			exit();
-			
+		else {			
+			$error = $TXT_DOESNT_EXIST;
 		}
 	}
 	else {
-		$error = 0;
+		$error = $TXT_NO_INPUT;
 	}
 	
 	header("Location: index.php?error=".$error);
 	exit();
-	
-}
 ?>
 

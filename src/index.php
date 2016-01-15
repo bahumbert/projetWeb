@@ -15,7 +15,11 @@ include($lang_file);
 	<body>
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-10 col-md-10 col-xs-10">
+				</div>
 				<?php include("./includes/languages_menu.php"); ?>
+			</div>
+			<div class="row">
 				<div class="col-sm-6 col-md-4 col-xs-10  col-md-offset-4 col-sm-offset-3 col-xs-offset-1">
 					<h1 class="text-center login-title">ZZTasks : <?php echo $TXT_TITLE ?>
 					</h1>
@@ -31,27 +35,9 @@ include($lang_file);
 						</form>
 						<?php
 						if (isset($_GET['error'])){
-							switch ($_GET['error']) {
-
-								case 0:
-									$error = $TXT_NO_INPUT;
-									break;
-							
-								case 1:
-									$error = $TXT_ALREADY_CONNECTED;
-									break;
-									
-								case 2:
-									$error = $TXT_DOESNT_EXIST;
-									break;
-
-								default:
-									$error = $TXT_DEFAULT;
-
-							}
 							echo "<div class=\"alert alert-danger\">
-									<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
-									".$error.".
+									<a href=\".\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
+									".$_GET['error'].".
 								 </div>";
 						}
 						?>
@@ -64,15 +50,10 @@ include($lang_file);
 						</form>
 						
 					</div>
+					<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
 				</div>
 			</div>				
 		</div>
 	</body>
-	
-	<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
 	
 </html> 
