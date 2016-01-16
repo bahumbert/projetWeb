@@ -22,18 +22,19 @@ if (isset($_SESSION['login']) && isset($_SESSION['role'])){
 
 	if ($_SESSION['role'] == 2){ ?>
 		<div class="col-sm-4 col-md-4 col-xs-4">
-			<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE ?> </a>
+			<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE; ?> </a>
 		</div>
 	<?php } ?>
 
 
 	<div class="col-sm-2 col-md-2 col-xs-2 text-center new-account">
-		<?php echo $TXT_YOU." ".$aff; ?>
+		<a href="logout.php"><?php echo $TXT_SIGNOUT; ?></a>
 	</div>
 	
 	<div class="col-sm-2 col-md-2 col-xs-2 text-center new-account">
-		<a href="logout.php"><?php echo $TXT_SIGNOUT; ?></a>
+		<?php echo $TXT_YOU." ".$aff; ?>
 	</div>
+	
 
 <?php
 }

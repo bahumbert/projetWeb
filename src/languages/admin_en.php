@@ -23,6 +23,7 @@ $TXT_ERROR2 = "Error, please enter a valid username and password";
 $TXT_ERROR4 = "This user has been deleted";
 $TXT_ERROR5 = "Error, this user doesn't exist";
 $TXT_ERROR6 = "Error, please try again";
+$TXT_ERROR7 = "Error with server configuration";
 $TXT_ERROR_DEFAULT = "Unknown error";
 
 $TXT_LIST = "User list :";

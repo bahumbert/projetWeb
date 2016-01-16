@@ -20,27 +20,40 @@ function deleteuser($user){
 		fclose($file);
 		
 		if (isset($arr[$user])){
-					
-			unset($arr[$user]);
-			
-			print_r($arr);
 			
 			$file = fopen("./files/login.json", "w");
 			if (!$file){
-				echo "HEHE";
+				$error = 7;
 			}
-			echo "<br/>ecriture=".fputs($file, json_encode($arr));
-			fclose($file);
+			else {
+				
+				$file2 = fopen("./files/roles.json", "r");
+				$line2 = fgets($file2);
+				$arr2 = json_decode($line2,true);
+				fclose($file2);
+				
+				$file2 = fopen("./files/roles.json", "w");
+				if (!$file2){
+					$error = 7;
+				}
+				else {
+					
+					unset($arr[$user]);
+					echo "<br/>ecriture=".fputs($file, json_encode($arr));
+					fclose($file);
+				
+					unset($arr2[$user]);
+					echo "<br/>ecriture=".fputs($file2, json_encode($arr2));
+					fclose($file2);
+					$error = 4;
+				}
+			}
 			
-			
-			$error = 4;
 		
 		}
 		else $error = 5;
 	}
 	else $error = 6;
-	
-	echo $error;
 		
 	header("Location: admin.php?error=".$error);
 	exit();

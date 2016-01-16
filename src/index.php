@@ -15,7 +15,11 @@ include($lang_file);
 	<body>
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-10 col-md-10 col-xs-10">
+				</div>
 				<?php include("./includes/languages_menu.php"); ?>
+			</div>
+			<div class="row">
 				<div class="col-sm-6 col-md-4 col-xs-10  col-md-offset-4 col-sm-offset-3 col-xs-offset-1">
 					<h1 class="text-center login-title">ZZTasks : <?php echo $TXT_TITLE ?>
 					</h1>
