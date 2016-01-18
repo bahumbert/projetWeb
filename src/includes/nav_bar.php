@@ -3,7 +3,6 @@
 $file = "nav_bar";
 include("./languages/manage_languages.php");
 include($lang_file);
-
 if (isset($_SESSION['login']) && isset($_SESSION['role'])){
 
 	switch($_SESSION['role']){
@@ -18,23 +17,24 @@ if (isset($_SESSION['login']) && isset($_SESSION['role'])){
 		case 0:
 			$aff = $TXT_ROLE_0;
 			break;
-	}
-
-	if ($_SESSION['role'] == 2){ ?>
-		<div class="col-sm-4 col-md-4 col-xs-4">
-			<a href="admin.php" class="text-center new-account"> <?php echo $TXT_CREATE; ?> </a>
-		</div>
+}
+?>
+<div class="col-sm-8 col-md-8 col-xs-8">
+	<ul class="nav nav-tabs">
+	  <li class="active"><a href="task.php"><?php echo $TXT_TASK?></a></li>
+	  <li><a href="createtask.php"><?php echo $TXT_CREATETASK?></a></li>
+	  <li><a href="deletetask.php"><?php echo $TXT_DELETETASK?></a></li>
+	  <?php if ($_SESSION['role'] == 2){ ?>
+	  <li>
+			<a href="admin.php"> <?php echo $TXT_CREATE; ?> </a>
+		</li>
 	<?php } ?>
-
-
-	<div class="col-sm-2 col-md-2 col-xs-2 text-center new-account">
-		<a href="logout.php"><?php echo $TXT_SIGNOUT; ?></a>
-	</div>
-	
-	<div class="col-sm-2 col-md-2 col-xs-2 text-center new-account">
-		<?php echo $TXT_YOU." ".$aff; ?>
-	</div>
-	
+	<?php include("./includes/languages_menu.php");?>
+		<li>
+			<a href="logout.php"><?php echo $TXT_SIGNOUT; ?></a>
+		</li>
+</div>
+	<?php echo $TXT_YOU." ".$aff; ?>
 
 <?php
 }

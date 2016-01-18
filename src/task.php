@@ -13,16 +13,7 @@ include($lang_file);
 	<body>
 		<div class="container" ng-controller="MainCtrl">
 			<div class="row">
-
-				<div class="col-sm-8 col-md-8 col-xs-8">
-					<ul class="nav nav-tabs">
-					  <li class="active"><a href="task.php"><?php echo $TXT_TASK?></a></li>
-					  <li><a href="createtask.php"><?php echo $TXT_CREATETASK?></a></li>
-					  <li><a href="deletetask.php"><?php echo $TXT_DELETETASK?></a></li>
-					</ul>
-				</div>
-					<?php include("./includes/languages_menu.php");?>
-					<?php include("./includes/nav_bar.php"); ?>
+				<?php include("./includes/nav_bar.php"); ?>
 			</div>
 			<div class="row">	
 				<div class="col-xs-4">
