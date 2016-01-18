@@ -1,16 +1,16 @@
 {
-    "name": "JulienUsson/ZZTask",
+    "name": "bahumbert/projetWeb",
     "description": "Projet de deuxième année à l'ISIMA.",
     "keywords": ["php","phpunit","git","travis"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Julien Usson",
-            "email": "usson.julien@gmail.com"
+            "name": "Bastien Humbert",
+            "email": "humbertb.info@gmail.com"
         },
 	{
-	    "name": "Romain Saulas",
-	    "email": "saulas.romain@gmail.com"
+	    "name": "Simon Dujardin",
+	    "email": "dujardin.simon@yahoo.fr"
 	}
     ],
     "require-dev": {
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "ZZTask": "src/"
+            "ZZTasks": "src/"
         }
     }
 }
