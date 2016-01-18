@@ -17,6 +17,6 @@ allow from all
 allow from all
 </Files>
 
-#<Files *.json>
-#allow from 127.0.0.1
-#</Files>
+<Files *.json>
+allow from all
+</Files>
