@@ -60,10 +60,6 @@ include($lang_file);
 						}
 						?>
 						<form class="form-signin" action="login.php" method="POST">
-						<label class="checkbox pull-left">
-							<input type="checkbox" value="remember-me">
-							<?php echo $TXT_REMEMBER ?>
-						</label>
 						<a href="https://www.google.com" class="pull-right need-help"> <?php echo $TXT_HELP ?></a><span class="clearfix"></span>
 						</form>
 						

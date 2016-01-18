@@ -9,7 +9,6 @@ $TXT_TITLE = "Einloggen";
 $TXT_USERNAME = "Benutzername";
 $TXT_PASSWORD = "Passwort";
 $TXT_SIGN = "Anmelden";
-$TXT_REMEMBER = "Erinnere mich";
 $TXT_HELP = "Brauche Hilfe ?";
 $TXT_CREATE = "Konto erstellen";
 

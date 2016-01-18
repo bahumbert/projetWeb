@@ -7,6 +7,6 @@ $TXT_ROLE_2 = "Administrator";
 $TXT_YOU = "You are";
 $TXT_SIGNOUT = "Sign out";
 
-$TXT_CREATE = "Create or delete Account";
+$TXT_CREATE = "Account Manager";
 
 ?>
