@@ -13,10 +13,10 @@ function login($usr, $pwd){
 		
 		if(isset($_POST["usr"])){
 			$usr = $_POST["usr"];
-			$pwd = sha1("zztask".$_POST["pwd"]."bcrypt");
+			$pwd = hash('sha512',"zztask".$_POST["pwd"]."bcrypt");
 		}
 		else {
-			$pwd = sha1("zztask".$pwd."bcrypt");
+			$pwd = hash('sha512',"zztask".$pwd."bcrypt");
 		}
 		$usr = strtolower($usr);
 		

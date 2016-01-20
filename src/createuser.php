@@ -10,12 +10,14 @@ function createuser($usr, $pwd, $roles){
 
 		if(isset($_POST["usr"])){
 			$usr = $_POST["usr"];
-			$pwd = sha1("zztask".$_POST["pwd"]."bcrypt");	//hash('sha256', $pass);
+			$pwd = hash('sha512',"zztask".$_POST["pwd"]."bcrypt");
 			$roles = $_POST["roles"];
 		}
 		else {
-			$pwd = sha1("zztask".$pwd."bcrypt");
+			$pwd = hash('sha512',"zztask".$pwd."bcrypt");
 		}
+		
+		echo $pwd."<br/>";
 		
 		$usr = strtolower($usr);
 		
