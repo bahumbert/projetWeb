@@ -6,9 +6,9 @@
 
 $('document').ready(function(){
 
-	var tid = setInterval(whoIsOnline, 15000);					// Calls the above function every 15 seconds
+	var tid = setInterval(whoIsOnline, 15000);					// Calls the function below every 15 seconds
 	
-	function whoIsOnline() {
+	function whoIsOnline() {									// Which is an ajax call 
 		$.ajax({
 			url: './includes/who_is_online.php',
 			type: 'POST',
