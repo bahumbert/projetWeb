@@ -3,22 +3,19 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-login(null, null);
+if ((isset($_POST["usr"]) && isset($_POST["pwd"]))){
+	login($_POST["usr"], $_POST["pwd"]);
+}
 
 function login($usr, $pwd){														// Function for login
 
 	$error = "";
 
-	if((isset($_POST["usr"]) && isset($_POST["pwd"])) || ($usr != null)){		
-		
-		if(isset($_POST["usr"])){
-			$usr = $_POST["usr"];
-			$pwd = hash('sha512',"zztask".$_POST["pwd"]."bcrypt");				// Prepares vars
-		}
-		else {
-			$pwd = hash('sha512',"zztask".$pwd."bcrypt");
-		}
-		$usr = strtolower($usr);
+	if($usr != null && $pwd != null){		
+	
+		$pwd = htmlentities($pwd);
+		$pwd = hash('sha512',"zztask".$pwd."bcrypt");
+		$usr = htmlentities(strtolower($usr));									// Prepares vars
 		
 		$monfichier = fopen("files/login.json", "r");
 		$line = fgets($monfichier);

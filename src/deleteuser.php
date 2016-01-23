@@ -1,16 +1,14 @@
 <?php
 
-deleteuser(null);
+if (isset($_GET["user"])){
+	deleteuser($_GET["user"]);
+}
 
 function deleteuser($user){									// Deletes a user
 
 	$error = "";
 
-	if (isset($_GET["user"]) || $user != null ){
-
-		if(isset($_GET["user"])){
-			$user = $_GET["user"];
-		}
+	if ($user != null ){
 		
 		$user = strtolower($user);
 		

@@ -1,23 +1,19 @@
 <?php
 
-createuser(null, null, null);
+if ((isset($_POST["usr"]) && isset($_POST["pwd"]) && isset($_POST["roles"]))){
 
-function createuser($usr, $pwd, $roles){			// Creates new users
+	createuser($_POST["usr"], $_POST["pwd"], $_POST["roles"]);
+}
+
+function createuser($usr, $pwd, $role){			// Creates new users
 
 	$error = "";
 
-	if ((isset($_POST["usr"]) && isset($_POST["pwd"])) || $usr != null && $pwd != null){
+	if ($usr != null && $pwd != null && $role != null){
 
-		if(isset($_POST["usr"])){
-			$usr = $_POST["usr"];
-			$pwd = hash('sha512',"zztask".$_POST["pwd"]."bcrypt");			// Prepares vars
-			$roles = $_POST["roles"];
-		}
-		else {
-			$pwd = hash('sha512',"zztask".$pwd."bcrypt");
-		}
-				
-		$usr = strtolower($usr);
+		$pwd = htmlentities($pwd);
+		$pwd = hash('sha512',"zztask".$pwd."bcrypt");
+		$usr = htmlentities(strtolower($usr));
 		
 		$file = fopen("./files/login.json", "r");							// Gets current list of users
 		$line = fgets($file);
@@ -47,7 +43,7 @@ function createuser($usr, $pwd, $roles){			// Creates new users
 			$arr = json_decode($line,true);
 			fclose($file);
 			
-			$array = array( $usr => $roles );
+			$array = array( $usr => $role );
 			if (isset($arr)){
 				$log = array_merge($arr,$array);			// Merges the 2 vars
 			}
