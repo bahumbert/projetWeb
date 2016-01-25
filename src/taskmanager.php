@@ -8,6 +8,7 @@ $done = "";
 $file = "taskmanager";
 include(__DIR__."/languages/manage_languages.php");
 include(__DIR__."/".$lang_file);
+//echo __DIR__."/".$lang_file;
 
 	if(isset($_POST['Create']))
 	{
