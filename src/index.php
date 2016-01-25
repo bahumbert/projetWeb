@@ -67,6 +67,13 @@ include($lang_file);
 				</div>
 			</div>				
 		</div>
+		
+		<?php
+		//echo __DIR__;
+		
+		?>
+		
+		
 	</body>
 	
 	<script>

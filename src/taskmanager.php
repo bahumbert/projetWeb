@@ -18,7 +18,7 @@ $done = "";
 	function createTask($name,$deadline,$description)					// Creation
 	{
 		$file = "taskmanager";
-		include("./languages/manage_languages.php");
+		include(__DIR__."/languages/manage_languages.php");
 		include($lang_file);
 		
 		$creator = $_SESSION['login'];
@@ -26,24 +26,24 @@ $done = "";
 		$description = htmlentities($description);
 		$array = array(array( "name" =>$name,"creator"  =>$creator,"datecreation"  => $dateofcreation,"deadline" =>$deadline,"descrip" =>$description));
 		
-		$monfichier = fopen("files/projects_file/".$name.".json", "w");
-		chmod("files/projects_file/".$name.".json", 0755);				// Creates a file named after the task containing all its infos
+		$monfichier = fopen(__DIR__."/files/projects_file/".$name.".json", "w");
+		chmod(__DIR__."/files/projects_file/".$name.".json", 0755);				// Creates a file named after the task containing all its infos
 		fputs($monfichier, json_encode($array));
 		fclose($monfichier);
 		
-		$monfichier = fopen("files/todo.json", "r");
+		$monfichier = fopen(__DIR__."/files/todo.json", "r");
 		$line = fgets($monfichier);
 		fclose($monfichier);
 		
 		$arr = json_decode($line,true);
 		$array = array( 0 => array("name" => $name) );					// Adds the task in the todo file 
 		$todo = array_merge($arr,$array);
-		$monfichier = fopen("files/todo.json", "w");
+		$monfichier = fopen(__DIR__."/files/todo.json", "w");
 		fputs($monfichier, json_encode($todo));
 		fclose($monfichier);
 		
 		$done = $TXT_CREATED;
-		header("Location: createtask.php?done=".$done);
+		header("Location: ./createtask.php?done=".$done);
 		exit();		
 	}
 	
@@ -51,20 +51,20 @@ $done = "";
 	function deleteTask($name)											// Deletion
 	{
 		$file = "taskmanager";
-		include("./languages/manage_languages.php");
+		include(__DIR__."/languages/manage_languages.php");
 		include($lang_file);
 		
 		$name = htmlentities($name);
 		if(!file_exists('files/projects_file/'.$name.'.json'))			// If theres no file named after the task, then it doesnt exist
 		{
 			$error = $TXT_DONT_EXIST;
-			header("Location: deletetask.php?error=".$error);
+			header("Location: ./deletetask.php?error=".$error);
 			exit();
 		}
 		else
 		{
 			unlink('files/projects_file/'.$name.'.json');				// Otherwise we can delete it
-			$monfichier = fopen("files/todo.json", "r");
+			$monfichier = fopen(__DIR__."/files/todo.json", "r");
 			$line = fgets($monfichier);
 			fclose($monfichier);
 			$arr = json_decode($line,true);
@@ -82,11 +82,11 @@ $done = "";
 			}
 			//print_r($arr);
 			
-			$monfichier = fopen("files/todo.json", "w");
+			$monfichier = fopen(__DIR__."/files/todo.json", "w");
 			fputs($monfichier, json_encode($arr));
 			fclose($monfichier);
 
-			$monfichier = fopen("files/inprog.json", "r");
+			$monfichier = fopen(__DIR__."/files/inprog.json", "r");
 			$line = fgets($monfichier);
 			fclose($monfichier);
 			$arr = json_decode($line,true);
@@ -103,11 +103,11 @@ $done = "";
 			}	
 			//print_r($arr);
 			
-			$monfichier = fopen("files/inprog.json", "w");
+			$monfichier = fopen(__DIR__."/files/inprog.json", "w");
 			fputs($monfichier, json_encode($arr));
 			fclose($monfichier);
 			
-			$monfichier = fopen("files/done.json", "r");
+			$monfichier = fopen(__DIR__."/files/done.json", "r");
 			$line = fgets($monfichier);
 			fclose($monfichier);
 			$arr = json_decode($line,true);
@@ -124,11 +124,11 @@ $done = "";
 			}		
 			//print_r($arr);
 			
-			$monfichier = fopen("files/done.json", "w");
+			$monfichier = fopen(__DIR__."/files/done.json", "w");
 			fputs($monfichier, json_encode($arr));
 			fclose($monfichier);
 			$done = $TXT_DELETED;
-			header("Location: deletetask.php?done=".$done);
+			header("Location: ./deletetask.php?done=".$done);
 			exit();
 		}
 	}

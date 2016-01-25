@@ -8,7 +8,7 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 
 		createTask("Test","23-01-2016","This is a test");
 		
-		$monfichier = fopen("../src/files/todo.json", "r");
+		$monfichier = fopen(__DIR__."/../src/files/todo.json", "r");
 		$line = fgets($monfichier);
 		fclose($monfichier);
 		$arr = json_decode($line,true);
@@ -21,7 +21,7 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 		
 		deleteTask('Test');
 		
-		$monfichier = fopen("../src/files/todo.json", "r");
+		$monfichier = fopen(__DIR__."/../src/files/todo.json", "r");
 		$line = fgets($monfichier);
 		fclose($monfichier);
 		$arr = json_decode($line,true);
