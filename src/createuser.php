@@ -64,5 +64,4 @@ function createuser($usr, $pwd, $role){			// Creates new users
 	header("Location: admin.php?error1=".$error);
 	exit();
 }
-
 ?>

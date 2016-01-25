@@ -1,5 +1,4 @@
-<?php
-if(!isset($_SESSION)){
+<?php if(!isset($_SESSION)){
     session_start();
 }
 
@@ -8,7 +7,7 @@ $done = "";
 $file = "taskmanager";
 include(__DIR__."/languages/manage_languages.php");
 include(__DIR__."/".$lang_file);
-//echo __DIR__."/".$lang_file;
+echo __DIR__."/".$lang_file;
 
 	if(isset($_POST['Create']))
 	{
@@ -20,7 +19,9 @@ include(__DIR__."/".$lang_file);
 	}
 	
 	function createTask($name,$deadline,$description)					// Creation
-	{		
+	{
+		global $TXT_CREATED;
+				
 		$creator = $_SESSION['login'];
 		$dateofcreation = date('d-m-Y');								// Prepare vars
 		$description = htmlentities($description);
@@ -43,13 +44,16 @@ include(__DIR__."/".$lang_file);
 		fclose($monfichier);
 		
 		$done = $TXT_CREATED;
-		header("Location: createtask.php?done=".$done);
-		exit();		
+		/*header("Location: createtask.php?done=".$done);
+		exit();	*/	
 	}
 	
 	
 	function deleteTask($name)											// Deletion
 	{		
+		
+		global $TXT_DELETED;
+		
 		$name = htmlentities($name);
 		if(!file_exists('files/projects_file/'.$name.'.json'))			// If theres no file named after the task, then it doesnt exist
 		{
@@ -124,8 +128,8 @@ include(__DIR__."/".$lang_file);
 			fputs($monfichier, json_encode($arr));
 			fclose($monfichier);
 			$done = $TXT_DELETED;
-			header("Location: deletetask.php?done=".$done);
-			exit();
+			/*header("Location: deletetask.php?done=".$done);
+			exit();*/
 		}
 	}
 ?>
