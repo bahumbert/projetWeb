@@ -30,6 +30,8 @@ $TXT_LIST = "User to delete :";
 $TXT_DELETE = "Delete";
 $TXT_CONFIRM = "Are you sure?";
 $TXT_CREATEUSER = "Create a new user";
-
+$TXT_YES = "Yes";
+$TXT_NO = "No";
+$TXT_SURE = "Are you sure ?";
 
 ?>

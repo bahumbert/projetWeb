@@ -22,7 +22,7 @@ include($lang_file);
 			<div class="row">
 				<?php include("./includes/nav_bar.php");  ?>
 			</div>
-			<div class="row">	
+			<div class="row taskbackground">	
 				<div class="col-xs-4">
 						<fieldset class="scheduler-border">
 							<legend class="scheduler-border"><?php echo $TXT_TODO?></legend>
@@ -37,7 +37,7 @@ include($lang_file);
 									{{todo[0].creator}}<br/>
 									<div class="subtitle"><?php echo $TXT_DEADLINE?>: </div>
 									{{todo[0].deadline}}<br/>
-									<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal1{{$index}}">More...</button>
+									<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal1{{$index}}"><?php echo $TXT_MORE;?>...</button>
 									<!-- Modal -->
 									<div id="myModal1{{$index}}" class="modal fade" role="dialog">
 									  <div class="modal-dialog modal-lg">
@@ -58,7 +58,7 @@ include($lang_file);
 												{{todo[0].descrip}}<br/>
 											</div>
 											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $TXT_CLOSE;?></button>
 											</div>
 										</div>
 									  </div>
@@ -82,7 +82,7 @@ include($lang_file);
 									{{inprog[0].creator}}<br/>
 									<div class="subtitle"><?php echo $TXT_DEADLINE?>: </div>
 									{{inprog[0].deadline}}<br/>
-									<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal2{{$index}}">More...</button>
+									<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal2{{$index}}"><?php echo $TXT_MORE;?>...</button>
 									<!-- Modal -->
 									<div id="myModal2{{$index}}" class="modal fade" role="dialog">
 									  <div class="modal-dialog modal-lg">
@@ -103,7 +103,7 @@ include($lang_file);
 												{{inprog[0].descrip}}<br/>
 											</div>
 											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $TXT_CLOSE;?></button>
 											</div>
 										</div>
 									  </div>
@@ -127,7 +127,7 @@ include($lang_file);
 									{{done[0].creator}}<br/>
 									<div class="subtitle"><?php echo $TXT_DEADLINE?>: </div>
 									{{done[0].deadline}}<br/>
-									<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal3{{$index}}">More...</button>
+									<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal3{{$index}}"><?php echo $TXT_MORE;?>...</button>
 									<!-- Modal -->
 									<div id="myModal3{{$index}}" class="modal fade" role="dialog">
 									  <div class="modal-dialog modal-lg">
@@ -148,7 +148,7 @@ include($lang_file);
 												{{done[0].descrip}}<br/>
 											</div>
 											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $TXT_CLOSE;?></button>
 											</div>
 										</div>
 									  </div>
@@ -160,7 +160,7 @@ include($lang_file);
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-2 col-md-2 col-md-push-10 col-xs-push-10">
+				<div class="col-xs-2 col-md-2 col-md-push-10 col-xs-push-10 savebutton">
 					<button href="task.php" type="button" class="btn btn-primary" ng-click="save()"><?php echo $TXT_SAVE?></button>
 				</div>
 			</div>
@@ -171,7 +171,7 @@ include($lang_file);
 	</body>
 	<footer>
 		<div class ="container footercontainer">
-			Copyright !
+			© 2016 S.A.B. Inc. All rights reserved.
 		</div>
 	</footer>
 </html> 

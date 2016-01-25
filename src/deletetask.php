@@ -22,14 +22,14 @@ include($lang_file);
 			<div class="row">
 				<?php include("./includes/nav_bar.php"); ?>
 			</div>
-			<div class="row">
-				<div class="title"><?php echo $TXT_DELETETASK?></div>
-				<form class="form-signin" action="taskmanager.php" method="POST">
-					<input type="text" class="form-control" placeholder="Name" name="name" required autofocus>
-					<button class="btn btn-lg btn-primary btn-block" type="submit" name="Delete">
-						<?php echo $TXT_DELETE?></button>
-				</form>
-				<div class="col-sm-4 col-md-4 col-xs-4 col-sm-push-4 col-md-push-4 col-xs-push-4">
+			<div class="row ">
+				<div class="col-sm-6 col-md-6 col-xs-6 col-sm-push-3 col-md-push-3 col-xs-push-3 account-wall">
+					<h1 class="text-center title"><?php echo $TXT_DELETETASK; ?> </h1>
+					<form class="form-signin" action="taskmanager.php" method="POST">
+						<input type="text" class="form-control" placeholder="Name" name="name" required autofocus>
+						<button class="btn btn-lg btn-primary btn-block" type="submit" name="Delete">
+							<?php echo $TXT_DELETE?></button>
+					</form>
 					<?php
 						if (isset($_GET['error'])){
 							echo "<div class=\"alert alert-danger\">
@@ -50,7 +50,7 @@ include($lang_file);
 	</body>
 	<footer>
 		<div class ="container footercontainer">
-			Copyright !
+			© 2016 S.A.B. Inc. All rights reserved.
 		</div>
 	</footer>
 		

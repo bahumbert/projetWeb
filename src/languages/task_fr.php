@@ -19,4 +19,6 @@ $TXT_CREATETASK = "Créer une tâche";
 $TXT_DELETETASK = "Supprimer une tâche";
 $TXT_SAVE = "Sauvegarder";
 $TXT_SUCCESSFULL = "Sauvegardé avec succès";
+$TXT_MORE = "Plus";
+$TXT_CLOSE ="Fermer";
 ?>

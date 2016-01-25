@@ -19,4 +19,6 @@ $TXT_CREATETASK = "Создать задачу";
 $TXT_DELETETASK = "Удалить задачу";
 $TXT_SAVE = "Сохранить";
 $TXT_SUCCESSFULL = "Сохраненные успешно";
+$TXT_MORE = "Больше";
+$TXT_CLOSE ="Закрыть";
 ?>

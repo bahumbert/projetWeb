@@ -19,4 +19,6 @@ $TXT_CREATETASK = "Create Task";
 $TXT_DELETETASK = "Delete Task";
 $TXT_SAVE="Save";
 $TXT_SUCCESSFULL = "Saved successfully";
+$TXT_MORE = "More";
+$TXT_CLOSE ="Close";
 ?>

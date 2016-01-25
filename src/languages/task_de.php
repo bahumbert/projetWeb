@@ -19,4 +19,6 @@ $TXT_CREATETASK = "Erstellen einer Aufgabe";
 $TXT_DELETETASK = "Löschen einer Aufgabe";
 $TXT_SAVE = "Sparen";
 $TXT_SUCCESSFULL = "Erfolgreich gespeichert";
+$TXT_MORE = "Mehr";
+$TXT_CLOSE ="Nah dran";
 ?>

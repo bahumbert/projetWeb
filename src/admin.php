@@ -31,9 +31,9 @@ include($lang_file);
 				<?php include("./includes/nav_bar.php"); ?>
 			</div>
 			<div class="row">
-				<div class="col-sm-6 col-md-6 col-xs-6">
-					<div class="account-wall">
-						<h1 class="text-center title"><?php echo $TXT_TITLE ?> </h1>
+				<div class="col-sm-6 col-md-6 col-xs-6 account-wall">
+					<h1 class="text-center title"><?php echo $TXT_TITLE ?> </h1>
+					<div>
 						 <?php
 						if (isset($_GET['error1'])){
 							switch ($_GET['error1']) {
@@ -83,8 +83,8 @@ include($lang_file);
 					</div>
 				</div>	
 				<div class="col-sm-6 col-md-6 col-xs-6 account-wall delete-wall">
+					<h1 class="text-center title"><?php echo $TXT_TITLE2 ?> </h1>
 					<div class="delete-form">
-						<h1 class="text-center title"><?php echo $TXT_TITLE2 ?> </h1>
 						
 						<?php
 						if (isset($_GET['error2'])){
@@ -139,11 +139,11 @@ include($lang_file);
 								<div class="modal-content">
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4 class="modal-title">Are you sure ?</h4>
+										<h4 class="modal-title"><?php echo $TXT_SURE ;?></h4>
 									</div>
 									<div class="modal-body">
-										<button  class="btn btn-lg btn-primary btn-block" type="submit"><?php echo "YES";?></button>
-										<button  class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"><?php echo "NO";?></button>
+										<button  class="btn btn-lg btn-primary btn-block" type="submit"><?php echo $TXT_YES;?></button>
+										<button  class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"><?php echo $TXT_NO;?></button>
 										</form>
 									</div>
 								</div>
@@ -156,7 +156,7 @@ include($lang_file);
 	</body>
 	<footer>
 		<div class ="container footercontainer">
-			Copyright !
+			 © 2016 S.A.B. Inc. All rights reserved.
 		</div>
 	</footer>
 	
