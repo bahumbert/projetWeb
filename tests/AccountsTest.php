@@ -2,10 +2,9 @@
 
 require_once(__DIR__."/../src/createuser.php");
 require_once(__DIR__."/../src/deleteuser.php");
-require_once(__DIR__."/../src/login.php");
 require_once(__DIR__."/../src/includes/list_all_user.php"); 
 
-class Tests extends PHPUnit_Framework_TestCase{
+class TestAccount extends PHPUnit_Framework_TestCase{
 
 	public function testAddUser(){
 
@@ -24,3 +23,5 @@ class Tests extends PHPUnit_Framework_TestCase{
 
 	}
 }
+
+?>

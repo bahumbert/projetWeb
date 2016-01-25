@@ -1,17 +1,13 @@
 <?php
 
-deleteuser(null);
+if (isset($_GET["user"])){
+	deleteuser($_GET["user"]);
+}
 
-function deleteuser($user){
+function deleteuser($user){									// Deletes a user
 
 	$error = "";
-
-	if (isset($_POST["user"]) || $user != null ){
-
-		if(isset($_POST["user"])){
-			$user = $_POST["user"];
-		}
-		
+	if ($user != null ){	
 		$user = strtolower($user);
 		
 		$file = fopen("./files/login.json", "r");
@@ -19,7 +15,7 @@ function deleteuser($user){
 		$arr = json_decode($line,true);
 		fclose($file);
 		
-		if (isset($arr[$user])){
+		if (isset($arr[$user])){							// If he exists obviously
 			
 			$file = fopen("./files/login.json", "w");
 			if (!$file){
@@ -38,7 +34,7 @@ function deleteuser($user){
 				}
 				else {
 					
-					unset($arr[$user]);
+					unset($arr[$user]);										// Deletion there
 					echo "<br/>ecriture=".fputs($file, json_encode($arr));
 					fclose($file);
 				
