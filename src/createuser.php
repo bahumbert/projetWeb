@@ -5,7 +5,8 @@ if ((isset($_POST["usr"]) && isset($_POST["pwd"]) && isset($_POST["roles"]))){
 	createuser($_POST["usr"], $_POST["pwd"], $_POST["roles"]);
 }
 
-function createuser($usr, $pwd, $role){			// Creates new users
+function createuser($usr, $pwd, $role){			
+// Creates new users
 
 	$error = "";
 
@@ -22,14 +23,17 @@ function createuser($usr, $pwd, $role){			// Creates new users
 
 		if (!isset($arr[$usr])){											// to look if this user already exist
 
-			$array = array( $usr => $pwd );				// If not, then we add the new user
+			$array = array( $usr => $pwd );				
+// If not, then we add the new user
 
 			if (isset($arr)){
-			$log = array_merge($arr,$array);			// By merging the 2 vars
+			$log = array_merge($arr,$array);			
+// By merging the 2 vars
 			}
 			else $log = $array;
 
-			$file = fopen(__DIR__."/files/login.json", "w");	// Writes down the new user list
+			$file = fopen(__DIR__."/files/login.json", "w");	
+// Writes down the new user list
 			if (!$file){
 				echo "HEHE";
 			}
@@ -38,14 +42,16 @@ function createuser($usr, $pwd, $role){			// Creates new users
 			fclose($file);
 
 
-			$file = fopen(__DIR__."/files/roles.json", "r");	// Same for his role
+			$file = fopen(__DIR__."/files/roles.json", "r");	
+// Same for his role
 			$line = fgets($file);
 			$arr = json_decode($line,true);
 			fclose($file);
 			
 			$array = array( $usr => $role );
 			if (isset($arr)){
-				$log = array_merge($arr,$array);			// Merges the 2 vars
+				$log = array_merge($arr,$array);			
+// Merges the 2 vars
 			}
 			else $log = $array;
 

@@ -52,7 +52,7 @@ echo __DIR__."/".$lang_file;
 	function deleteTask($name)											// Deletion
 	{		
 		
-		global $TXT_DELETED;
+		global $TXT_DELETED, $TXT_DONT_EXIST;
 		
 		$name = htmlentities($name);
 		if(!file_exists('files/projects_file/'.$name.'.json'))			// If theres no file named after the task, then it doesnt exist
