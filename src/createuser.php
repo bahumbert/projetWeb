@@ -29,7 +29,7 @@ function createuser($usr, $pwd, $role){			// Creates new users
 			}
 			else $log = $array;
 			
-			$file = fopen(__DIR__."./files/login.json", "w");	// Writes down the new user list
+			$file = fopen(__DIR__."/files/login.json", "w");	// Writes down the new user list
 			if (!$file){
 				echo "HEHE";
 			}

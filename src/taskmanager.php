@@ -5,6 +5,9 @@ if(!isset($_SESSION)){
 
 $error = "";															// Creates and deletes Tasks
 $done = "";
+$file = "taskmanager";
+include(__DIR__."/languages/manage_languages.php");
+include(__DIR__."/".$lang_file);
 
 	if(isset($_POST['Create']))
 	{
@@ -16,11 +19,7 @@ $done = "";
 	}
 	
 	function createTask($name,$deadline,$description)					// Creation
-	{
-		$file = "taskmanager";
-		include(__DIR__."/languages/manage_languages.php");
-		include($lang_file);
-		
+	{		
 		$creator = $_SESSION['login'];
 		$dateofcreation = date('d-m-Y');								// Prepare vars
 		$description = htmlentities($description);
@@ -49,11 +48,7 @@ $done = "";
 	
 	
 	function deleteTask($name)											// Deletion
-	{
-		$file = "taskmanager";
-		include(__DIR__."/languages/manage_languages.php");
-		include($lang_file);
-		
+	{		
 		$name = htmlentities($name);
 		if(!file_exists('files/projects_file/'.$name.'.json'))			// If theres no file named after the task, then it doesnt exist
 		{
