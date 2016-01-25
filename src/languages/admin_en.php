@@ -6,9 +6,9 @@ Index Language: English
 */
 
 $TXT_TITLE = "Create a new user";
+$TXT_TITLE2 = "Delete user";
 $TXT_USERNAME = "Username";
 $TXT_PASSWORD = "Password";
-$TXT_CREATE = "Create a new user";
 $TXT_HELP = "Need Help ?";
 $TXT_LOG = "Log In";
 
@@ -26,10 +26,10 @@ $TXT_ERROR6 = "Error, please try again";
 $TXT_ERROR7 = "Error with server configuration";
 $TXT_ERROR_DEFAULT = "Unknown error";
 
-$TXT_LIST = "User list :";
+$TXT_LIST = "User to delete :";
 $TXT_DELETE = "Delete";
 $TXT_CONFIRM = "Are you sure?";
-
+$TXT_CREATEUSER = "Create a new user";
 
 
 ?>

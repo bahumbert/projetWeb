@@ -6,10 +6,10 @@ function deleteuser($user){
 
 	$error = "";
 
-	if (isset($_GET["user"]) || $user != null ){
+	if (isset($_POST["user"]) || $user != null ){
 
-		if(isset($_GET["user"])){
-			$user = $_GET["user"];
+		if(isset($_POST["user"])){
+			$user = $_POST["user"];
 		}
 		
 		$user = strtolower($user);
@@ -54,8 +54,8 @@ function deleteuser($user){
 		else $error = 5;
 	}
 	else $error = 6;
-		
-	header("Location: admin.php?error=".$error);
+
+	header("Location: admin.php?error2=".$error);
 	exit();
 		
 }

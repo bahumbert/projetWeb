@@ -2,6 +2,7 @@
 if(!isset($_SESSION)){
     session_start();
 }
+$file1 = "task";
 $file = "task";
 include("./languages/manage_languages.php");
 include($lang_file);
@@ -10,10 +11,16 @@ include($lang_file);
 <!DOCTYPE html>
 <html ng-app="DragAndDrop" lang="<?php echo $lang; ?>">
 	<?php include('./includes/head.php'); ?>
+	<header>
+		<div class="container">
+				<div class="header-title"> ZZTask
+				</div>
+		</div>
+	</header>
 	<body>
-		<div class="container" ng-controller="MainCtrl">
+		<div class="container pagebody" ng-controller="MainCtrl">
 			<div class="row">
-				<?php include("./includes/nav_bar.php"); ?>
+				<?php include("./includes/nav_bar.php");  ?>
 			</div>
 			<div class="row">	
 				<div class="col-xs-4">
@@ -75,7 +82,7 @@ include($lang_file);
 									{{inprog[0].creator}}<br/>
 									<div class="subtitle"><?php echo $TXT_DEADLINE?>: </div>
 									{{inprog[0].deadline}}<br/>
-									<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal2{{$index}}">More...</button>.
+									<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal2{{$index}}">More...</button>
 									<!-- Modal -->
 									<div id="myModal2{{$index}}" class="modal fade" role="dialog">
 									  <div class="modal-dialog modal-lg">
@@ -157,11 +164,14 @@ include($lang_file);
 					<button href="task.php" type="button" class="btn btn-primary" ng-click="save()"><?php echo $TXT_SAVE?></button>
 				</div>
 			</div>
-		</div>
-		
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script type="text/javascript" src="./jquery.js" async></script>
 
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="./jquery.js" async></script>
 	</body>
-		
+	<footer>
+		<div class ="container footercontainer">
+			Copyright !
+		</div>
+	</footer>
 </html> 

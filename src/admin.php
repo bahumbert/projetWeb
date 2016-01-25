@@ -7,7 +7,7 @@ if ($_SESSION["role"] != 2){
 	header("Location: index.php?error=4");
 	exit();
 }
-
+$file1 = "admin";
 $file = "admin";
 include("./languages/manage_languages.php");
 include($lang_file);
@@ -19,22 +19,24 @@ include($lang_file);
 	<head>
 		<?php include('./includes/head.php'); ?>
 	</head>	
-	<body>
+	<header>
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-10 col-md-10 col-xs-10">
+				<div class="header-title"> ZZTask
 				</div>
-				<?php include("./includes/languages_menu.php"); ?>
+		</div>
+	</header>
+	<body>
+		<div class="container pagebody">
+			<div class="row">
+				<?php include("./includes/nav_bar.php"); ?>
 			</div>
 			<div class="row">
-				<div class="col-sm-6 col-md-4 col-xs-10  col-md-offset-4 col-sm-offset-3 col-xs-offset-1">
-					<h1 class="text-center login-title">ZZTasks : <?php echo $TXT_TITLE ?> </h1>
+				<div class="col-sm-6 col-md-6 col-xs-6">
 					<div class="account-wall">
-						<img class="profile-img" src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"
-						 alt="">
+						<h1 class="text-center title"><?php echo $TXT_TITLE ?> </h1>
 						 <?php
-						if (isset($_GET['error'])){
-							switch ($_GET['error']) {
+						if (isset($_GET['error1'])){
+							switch ($_GET['error1']) {
 
 								case 0:
 									$alert = "success";
@@ -51,26 +53,6 @@ include($lang_file);
 									$error = $TXT_ERROR2;
 									break;
 									
-								case 4:
-									$alert = "success";
-									$error = $TXT_ERROR4;
-									break;
-									
-								case 5:
-									$alert = "danger";
-									$error = $TXT_ERROR5;
-									break;
-									
-								case 6:
-									$alert = "danger";
-									$error = $TXT_ERROR6;
-									break;
-									
-								case 7:
-									$alert = "danger";
-									$error = $TXT_ERROR7;
-									break;
-
 								default:
 									$alert = "warning";
 									$error = $TXT_ERROR_DEFAULT;
@@ -95,37 +77,90 @@ include($lang_file);
 						  </select>
 						</div>
 						<button class="btn btn-lg btn-primary btn-block" type="submit">
-							<?php echo $TXT_CREATE; ?></button>
-						<a href="https://www.google.com" class="pull-right need-help"><?php echo $TXT_HELP; ?> </a><span class="clearfix"></span>
+							<?php echo $TXT_CREATEUSER; ?></button>
 						</form>
+
 					</div>
-					<a href="index.php" class="text-center new-account"> <?php echo $TXT_LOG; ?> </a>
 				</div>	
+				<div class="col-sm-6 col-md-6 col-xs-6 account-wall delete-wall">
+					<div class="delete-form">
+						<h1 class="text-center title"><?php echo $TXT_TITLE2 ?> </h1>
+						
+						<?php
+						if (isset($_GET['error2'])){
+							switch ($_GET['error2']) {
+							case 4:
+										$alert = "success";
+										$error = $TXT_ERROR4;
+										break;
+										
+									case 5:
+										$alert = "danger";
+										$error = $TXT_ERROR5;
+										break;
+										
+									case 6:
+										$alert = "danger";
+										$error = $TXT_ERROR6;
+										break;
+										
+									case 7:
+										$alert = "danger";
+										$error = $TXT_ERROR7;
+										break;
+
+									default:
+										$alert = "warning";
+										$error = $TXT_ERROR_DEFAULT;
+							}
+							echo "<div class=\"alert alert-".$alert."\">
+									<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
+									".$error."
+								 </div>";
+						}
+						include("./includes/list_all_user.php"); 
+						$array = list_all_user("./files/roles.json");
+						
+						$ROLES = array(0 => $TXT_USER, 1 => $TXT_MANAGER, 2 => $TXT_ADMIN);
+						?>
+							<form action="./deleteuser.php" method="POST">
+							<label class="select-delete" for="sel2"><?php echo $TXT_LIST;?></label>
+							<select class="form-control" id="sel2" name="user">
+						<?php	
+						foreach($array as $name => $role){?>
+							<option value="<?php echo $name;?>"> <?php echo $name." : ".$ROLES[$role];?></option>
+						<?php	
+						}
+						?>
+						</select>
+						<button class="btn btn-lg btn-primary btn-block btn-delete" type="button" data-toggle="modal" data-target="#myModal"><?php echo $TXT_TITLE2;?></button>
+						<div class="modal fade" id="myModal" role="dialog">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Are you sure ?</h4>
+									</div>
+									<div class="modal-body">
+										<button  class="btn btn-lg btn-primary btn-block" type="submit"><?php echo "YES";?></button>
+										<button  class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"><?php echo "NO";?></button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
 			</div>
 		</div>
-		
-		<?php include("./includes/list_all_user.php"); 
-		$array = list_all_user("./files/roles.json");
-		
-		$ROLES = array(0 => $TXT_USER, 1 => $TXT_MANAGER, 2 => $TXT_ADMIN);
-		
-		echo $TXT_LIST."<br/>";
-		
-		foreach($array as $name => $role){
-			echo $name." : ".$ROLES[$role];?> <a href='./deleteuser.php?user=<?php echo $name;?>' onclick='if (!confirm("<?php echo $TXT_CONFIRM;?>")) return false;'><?php echo $TXT_DELETE; ?></a><br/>
-	<?php	
-		}
-
-	?>
-		
-		
 	</body>
-	
 	<footer>
-	
+		<div class ="container footercontainer">
+			Copyright !
+		</div>
 	</footer>
 	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="./jquery.js" async></script>
 	
 </html> 

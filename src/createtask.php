@@ -2,6 +2,7 @@
 if(!isset($_SESSION)){
     session_start();
 }
+$file1 = "createtask";
 $file = "createtask";
 include("./languages/manage_languages.php");
 include($lang_file);
@@ -10,17 +11,16 @@ include($lang_file);
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
 	<?php include('./includes/head.php'); ?>
-	<body>
+	<header>
 		<div class="container">
+			<div class="header-title"> ZZTask
+			</div>
+		</div>
+	</header>
+	<body>
+		<div class="container pagebody">
 			<div class="row">
-				<div class="col-sm-10 col-md-10 col-xs-10">
-					<ul class="nav nav-tabs">
-					  <li><a href="task.php"><?php echo $TXT_TASK?></a></li>
-					  <li class="active"><a href="createtask.php"><?php echo $TXT_CREATETASK?></a></li>
-					  <li><a href="deletetask.php"><?php echo $TXT_DELETETASK?></a></li>
-					</ul>
-				</div>
-				<?php include("./includes/languages_menu.php"); ?>
+				<?php include("./includes/nav_bar.php"); ?>
 			</div>
 			<div class="row">
 				<div class="title"><?php echo $TXT_CREATETASK?></div>
@@ -44,5 +44,10 @@ include($lang_file);
 			</div>
 		</div>	
 	</body>
+	<footer>
+		<div class="container footercontainer">
+			Copyright
+		</div>
+	</footer>
 		
 </html> 
