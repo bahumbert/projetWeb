@@ -42,7 +42,7 @@ include(__DIR__."/".$lang_file);
 		fclose($monfichier);
 		
 		$done = $TXT_CREATED;
-		header("Location: ./createtask.php?done=".$done);
+		header("Location: createtask.php?done=".$done);
 		exit();		
 	}
 	
@@ -53,7 +53,7 @@ include(__DIR__."/".$lang_file);
 		if(!file_exists('files/projects_file/'.$name.'.json'))			// If theres no file named after the task, then it doesnt exist
 		{
 			$error = $TXT_DONT_EXIST;
-			header("Location: ./deletetask.php?error=".$error);
+			header("Location: deletetask.php?error=".$error);
 			exit();
 		}
 		else
@@ -123,7 +123,7 @@ include(__DIR__."/".$lang_file);
 			fputs($monfichier, json_encode($arr));
 			fclose($monfichier);
 			$done = $TXT_DELETED;
-			header("Location: ./deletetask.php?done=".$done);
+			header("Location: deletetask.php?done=".$done);
 			exit();
 		}
 	}

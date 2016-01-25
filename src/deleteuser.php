@@ -49,7 +49,7 @@ function deleteuser($user){									// Deletes a user
 	}
 	else $error = 6;
 
-	header("Location: ./admin.php?error2=".$error);
+	header("Location: admin.php?error2=".$error);
 	exit();
 		
 }

@@ -1,10 +1,13 @@
-<?php
+<?php session_start();
 
 require_once(__DIR__."/../src/taskmanager.php");
 
 class TestTasks extends PHPUnit_Framework_TestCase{
 
 	public function testAddTask(){
+
+		
+		$_SESSION["login"] = "test";
 
 		createTask("Test","23-01-2016","This is a test");
 		
@@ -14,6 +17,7 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 		$arr = json_decode($line,true);
 		
 		$this->assertArrayHasKey('Test', $arr[0]);
+		unset($_SESSION["login"]);
 		
 	}
 
