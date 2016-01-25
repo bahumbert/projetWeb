@@ -44,8 +44,8 @@ echo __DIR__."/".$lang_file;
 		fclose($monfichier);
 		
 		$done = $TXT_CREATED;
-		/*header("Location: createtask.php?done=".$done);
-		exit();	*/	
+		header("Location: createtask.php?done=".$done);
+		exit();	
 	}
 	
 	
@@ -128,8 +128,8 @@ echo __DIR__."/".$lang_file;
 			fputs($monfichier, json_encode($arr));
 			fclose($monfichier);
 			$done = $TXT_DELETED;
-			/*header("Location: deletetask.php?done=".$done);
-			exit();*/
+			header("Location: deletetask.php?done=".$done);
+			exit();
 		}
 	}
 ?>
