@@ -9,7 +9,7 @@ class TestAccount extends PHPUnit_Framework_TestCase{
 	public function testAddUser(){
 
 		createuser("KOUKOU","KIKOU","2");
-		$array = list_all_user("./files/roles.json");
+		$array = list_all_user(__DIR__."/../src/files/roles.json");
 		$this->assertArrayHasKey('KOUKOU', $array);
 		
 		
@@ -18,7 +18,7 @@ class TestAccount extends PHPUnit_Framework_TestCase{
 	public function testDeleteUser(){
 		
 		deleteuser('KOUKOU');
-		$array = list_all_user("./files/roles.json");
+		$array = list_all_user(__DIR__."/../src/files/roles.json");
 		$this->assertNotArrayHasKey('KOUKOU', $array);
 
 	}
