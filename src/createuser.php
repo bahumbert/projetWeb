@@ -1,4 +1,4 @@
-<?php
+<?php ob_start();
 
 if ((isset($_POST["usr"]) && isset($_POST["pwd"]) && isset($_POST["roles"]))){
 

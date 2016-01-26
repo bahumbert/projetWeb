@@ -1,4 +1,6 @@
-<?php if (isset($_GET["user"])){
+<?php ob_start();
+
+if (isset($_GET["user"])){
 	deleteuser($_GET["user"]);
 }
 
@@ -51,6 +53,7 @@ function deleteuser($user){
 	}
 	else $error = 6;
 
+	ob_end_flush();
 	header("Location: admin.php?error2=".$error);
 	exit();
 }

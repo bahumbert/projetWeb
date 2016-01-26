@@ -1,4 +1,5 @@
-<?php if(!isset($_SESSION)){
+<?php ob_start();
+if(!isset($_SESSION)){
     session_start();
 }
 
@@ -129,6 +130,7 @@ echo __DIR__."/".$lang_file;
 			fclose($monfichier);
 			$done = $TXT_DELETED;
 			header("Location: deletetask.php?done=".$done);
+			ob_end_flush();
 			exit();
 		}
 	}
