@@ -11,12 +11,7 @@ include($lang_file);
 <!DOCTYPE html>
 <html ng-app="DragAndDrop" lang="<?php echo $lang; ?>">
 	<?php include('./includes/head.php'); ?>
-	<header>
-		<div class="container">
-				<div class="header-title"> ZZTask
-				</div>
-		</div>
-	</header>
+	<?php include("./includes/header.php");  ?>
 	<body>
 		<div class="container pagebody" ng-controller="MainCtrl">
 			<div class="row">
@@ -169,9 +164,5 @@ include($lang_file);
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" src="./jquery.js" async></script>
 	</body>
-	<footer>
-		<div class ="container footercontainer">
-			© 2016 S.A.B. Inc. All rights reserved.
-		</div>
-	</footer>
+	<?php include("./includes/footer.php");  ?>
 </html> 

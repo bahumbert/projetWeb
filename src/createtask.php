@@ -11,12 +11,7 @@ include($lang_file);
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
 	<?php include('./includes/head.php'); ?>
-	<header>
-		<div class="container">
-			<div class="header-title"> ZZTask
-			</div>
-		</div>
-	</header>
+	<?php include("./includes/header.php");  ?>
 	<body>
 		<div class="container pagebody">
 			<div class="row">
@@ -32,7 +27,7 @@ include($lang_file);
 						<button class="btn btn-lg btn-primary btn-block" type="submit" name="Create">
 							<?php echo $TXT_CREATE?></button>
 					</form>
-					<div class="col-sm-4 col-md-4 col-xs-4 col-sm-push-4 col-md-push-4 col-xs-push-4">
+					<div class="col-sm-6 col-md-6 col-xs-6 col-sm-push-3 col-md-push-3 col-xs-push-3">
 						<?php
 							if (isset($_GET['done'])){
 								echo "<div class=\"alert alert-success\">
@@ -52,10 +47,6 @@ include($lang_file);
 			</div>
 		</div>	
 	</body>
-	<footer>
-		<div class="container footercontainer">
-			© 2016 S.A.B. Inc. All rights reserved.
-		</div>
-	</footer>
+	<?php include("./includes/footer.php");  ?>
 		
 </html> 

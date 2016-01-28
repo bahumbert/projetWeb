@@ -13,12 +13,12 @@ include($lang_file);
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
 	<?php include("./includes/head.php"); ?>
+	<?php include("./includes/header.php");  ?>
 	<body>
-		<div class="container">
+		<div class="container pagebody">
 			<div class="row">
-				<div class="col-sm-10 col-md-10 col-xs-10">
-				</div>
-				<?php include("./includes/languages_menu.php"); ?>
+			<ul class="nav nav-tabs">
+				<li><?php include("./includes/languages_menu.php"); ?></li>
 			</div>
 			<div class="row">
 				<div class="col-sm-6 col-md-4 col-xs-10  col-md-offset-4 col-sm-offset-3 col-xs-offset-1">
@@ -68,15 +68,8 @@ include($lang_file);
 				</div>
 			</div>				
 		</div>
-		
-		<?php
-		//echo __DIR__;
-		
-		?>
-		
-		
 	</body>
-	
+	<?php include("./includes/footer.php");  ?>
 	<script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();

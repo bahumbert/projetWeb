@@ -16,15 +16,8 @@ include($lang_file);
 
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>" ng-app="zztask">
-	<head>
 		<?php include('./includes/head.php'); ?>
-	</head>	
-	<header>
-		<div class="container">
-				<div class="header-title"> ZZTask
-				</div>
-		</div>
-	</header>
+		<?php include('./includes/header.php'); ?>
 	<body>
 		<div class="container pagebody">
 			<div class="row">
@@ -154,11 +147,7 @@ include($lang_file);
 			</div>
 		</div>
 	</body>
-	<footer>
-		<div class ="container footercontainer">
-			 © 2016 S.A.B. Inc. All rights reserved.
-		</div>
-	</footer>
+	<?php include("./includes/footer.php");?>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="./jquery.js" async></script>

@@ -203,8 +203,6 @@ body{
 footer
 {
 	text-align : center;
-	position: absolute;
-	bottom: 0px;
 	width : 100%;
 	height: 5%;
 }
@@ -217,7 +215,7 @@ html, body {
 
 .pagebody
 {
-	height : 87%;
+	height : 100%;
 }
 .footercontainer
 {
@@ -235,4 +233,5 @@ html, body {
 .savebutton
 {
 	margin-top : 10px;
+	margin-bottom : 80px;
 }
