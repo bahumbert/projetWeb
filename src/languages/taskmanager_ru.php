@@ -8,3 +8,4 @@ Login Language: Russian
 $TXT_CREATED ="Задача была успешно создана";
 $TXT_DONT_EXIST="Эта задача не существует";
 $TXT_DELETED="Задача была успешно удалена";
+$TXT_ERROR = "Ошибка эта задача уже существует";

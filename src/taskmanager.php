@@ -21,32 +21,45 @@ echo __DIR__."/".$lang_file;
 	
 	function createTask($name,$deadline,$description)					// Creation
 	{
-		global $TXT_CREATED;
-				
-		$creator = $_SESSION['login'];
-		$dateofcreation = date('d-m-Y');								// Prepare vars
-		$description = htmlentities($description);
-		$array = array(array( "name" =>$name,"creator"  =>$creator,"datecreation"  => $dateofcreation,"deadline" =>$deadline,"descrip" =>$description));
+		global $TXT_CREATED, $TXT_ERROR;
 		
-		$monfichier = fopen(__DIR__."/files/projects_file/".$name.".json", "w");
-		chmod(__DIR__."/files/projects_file/".$name.".json", 0755);				// Creates a file named after the task containing all its infos
-		fputs($monfichier, json_encode($array));
-		fclose($monfichier);
+		$dir = opendir(__DIR__."/files/projects_file");
+		 while (($file = readdir($dir)) !== false && $file != $name.".json") {
+        }
+		closedir($dir);
 		
-		$monfichier = fopen(__DIR__."/files/todo.json", "r");
-		$line = fgets($monfichier);
-		fclose($monfichier);
+		if ($file == $name.".json"){
+			$error =  $TXT_ERROR;
+			header("Location: createtask.php?error=".$error);
+			exit();
+		}
+		else {
 		
-		$arr = json_decode($line,true);
-		$array = array( 0 => array("name" => $name) );					// Adds the task in the todo file 
-		$todo = array_merge($arr,$array);
-		$monfichier = fopen(__DIR__."/files/todo.json", "w");
-		fputs($monfichier, json_encode($todo));
-		fclose($monfichier);
-		
-		$done = $TXT_CREATED;
-		header("Location: createtask.php?done=".$done);
-		exit();	
+			$creator = $_SESSION['login'];
+			$dateofcreation = date('d-m-Y');								// Prepare vars
+			$description = htmlentities($description);
+			$array = array(array( "name" =>$name,"creator"  =>$creator,"datecreation"  => $dateofcreation,"deadline" =>$deadline,"descrip" =>$description));
+			
+			$monfichier = fopen(__DIR__."/files/projects_file/".$name.".json", "w");
+			chmod(__DIR__."/files/projects_file/".$name.".json", 0755);				// Creates a file named after the task containing all its infos
+			fputs($monfichier, json_encode($array));
+			fclose($monfichier);
+			
+			$monfichier = fopen(__DIR__."/files/todo.json", "r");
+			$line = fgets($monfichier);
+			fclose($monfichier);
+			
+			$arr = json_decode($line,true);
+			$array = array( 0 => array("name" => $name) );					// Adds the task in the todo file 
+			$todo = array_merge($arr,$array);
+			$monfichier = fopen(__DIR__."/files/todo.json", "w");
+			fputs($monfichier, json_encode($todo));
+			fclose($monfichier);
+			
+			$done = $TXT_CREATED;
+			header("Location: createtask.php?done=".$done);
+			exit();
+		}
 	}
 	
 	

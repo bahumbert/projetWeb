@@ -40,6 +40,12 @@ include($lang_file);
 										".$_GET['done'].".
 									 </div>";
 							}
+							else if (isset($_GET['error'])){
+								echo "<div class=\"alert alert-danger\">
+										<a href=\".\createtask.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
+										".$_GET['error'].".
+									 </div>";
+							}
 						?>
 					</div>
 				</div>

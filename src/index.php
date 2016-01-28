@@ -5,6 +5,7 @@ if(!isset($_SESSION)){
 }
 
 $file = "index";
+$file1 = "index";
 include("./languages/manage_languages.php");
 include($lang_file);
 ?>
