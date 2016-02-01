@@ -154,7 +154,7 @@ include($lang_file);
 					</fieldset>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row savecolor" >
 				<div class="col-xs-2 col-md-2 col-md-push-10 col-xs-push-10 savebutton">
 					<button href="task.php" type="button" class="btn btn-primary" ng-click="save()"><?php echo $TXT_SAVE?></button>
 				</div>
